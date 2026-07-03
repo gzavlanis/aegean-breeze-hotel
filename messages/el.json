@@ -1,0 +1,94 @@
+{
+  "Header": {
+    "nav_rooms": "Διαμονη",
+    "nav_experiences": "Εμπειριες",
+    "nav_gallery": "Gallery",
+    "nav_contact": "Επικοινωνια",
+    "nav_book_now": "Κρατηση",
+    "select_language": "Επιλογη Γλωσσας",
+    "lang_en": "Αγγλικά",
+    "lang_el": "Ελληνικά",
+    "lang_fr": "Γαλλικά",
+    "lang_de": "Γερμανικά",
+    "lang_it": "Ιταλικά",
+    "lang_es": "Ισπανικά"
+  },
+  "Hero": {
+    "welcome": "Καλωσορισατε στο Aethra",
+    "tagline": "Η Γεωμετρια της Απολυτης Γαληνης",
+    "starting_from": "Απο €180 / Διανυκτερευση",
+    "book_now": "Κρατηση",
+    "check_in": "Άφιξη",
+    "check_out": "Αναχώρηση",
+    "guests": "Άτομα",
+    "check_availability": "Ελεγχος Διαθεσιμοτητας"
+  },
+  "Rooms": {
+    "title": "Η Διαμονη Σας",
+    "subtitle": "Ανακαλύψτε τα μινιμαλιστικά δωμάτια και τις σουίτες μας, σχεδιασμένα για απόλυτη χαλάρωση.",
+    "view_details": "Λεπτομερειες",
+    "guests_label": "Επισκέπτες",
+    "per_night": "ανά νύχτα",
+    "from": "ΑΠΟ",
+    "amenity_wifi": "Δωρεάν WiFi",
+    "amenity_ac": "Κλιματισμός",
+    "amenity_pool": "Ιδιωτική Πισίνα",
+    "amenity_coffee": "Μηχανή Espresso",
+    "amenity_tv": "Smart TV",
+    "amenity_parking": "Δωρεάν Πάρκινγκ"
+  },
+  "Experiences": {
+    "title": "Εμπειριες Αιγαιου",
+    "subtitle": "Ανακαλύψτε τις μοναδικές παροχές μας με φόντο το απέραντο γαλάζιο.",
+    "discover": "Ανακαλυψτε",
+    "dining": "Γαστρονομια",
+    "dining_desc": "Αυθεντική αιγαιοπελαγίτικη κουζίνα με τοπικά υλικά και θέα το ηλιοβασίλεμα.",
+    "wellness": "Ευεξια & Spa",
+    "wellness_desc": "Χαλαρώστε με γεωμετρική θεραπεία πέτρας και ολιστικές θεραπείες αναζωογόνησης.",
+    "yachting": "Ιδιωτικο Yachting",
+    "yachting_desc": "Ανακαλύψτε κρυφούς ορμίσκους με τον ιδιωτικό μας στόλο.",
+    "wine": "Οινογνωσια",
+    "wine_desc": "Περιηγηθείτε σε ιστορικούς αμπελώνες και γευτείτε σπάνιες ποικιλίες."
+  },
+  "Gallery": {
+    "title": "Visual History",
+    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+  },
+  "Testimonials": {
+    "title": "Ειπαν για εμας",
+    "subtitle": "Οι εμπειρίες των επισκεπτών μας, αποτυπωμένες με φόντο το απέραντο γαλάζιο του Αιγαίου."
+  },
+  "Contact": {
+    "title": "Επικοινωνια",
+    "subtitle": "Είμαστε εδώ για να σχεδιάσουμε μαζί την ιδανική διαμονή σας. Επικοινωνήστε μαζί μας για κρατήσεις ή ειδικά αιτήματα.",
+    "location_label": "Τοποθεσία",
+    "location_value": "Ημεροβίγλι, Σαντορίνη 847 00",
+    "phone_label": "Τηλέφωνο",
+    "name_label": "Ονοματεπώνυμο",
+    "email_label": "Email",
+    "subject_label": "Θέμα",
+    "subject_general": "Γενικές Πληροφορίες",
+    "subject_booking": "Κράτηση Δωματίου",
+    "subject_event": "Οργάνωση Εκδήλωσης",
+    "subject_other": "Άλλο",
+    "message_label": "Μήνυμα",
+    "message_placeholder": "Πώς μπορούμε να σας βοηθήσουμε;",
+    "submit_button": "Αποστολη Μηνυματος"
+  },
+  "Footer": {
+    "description": "Ο ορισμός της κυκλαδίτικης μινιμαλιστικής πολυτέλειας. Ένα καταφύγιο γαλήνης στο απέραντο γαλάζιο του Αιγαίου.",
+    "explore": "Εξερευνηστε",
+    "info": "Πληροφοριες",
+    "newsletter": "Newsletter",
+    "newsletter_desc": "Εγγραφείτε για να λαμβάνετε αποκλειστικές προσφορές και νέα μας.",
+    "email_placeholder": "Το email σας",
+    "rights": "Με επιφύλαξη παντός δικαιώματος.",
+    "nav_rooms": "Διαμονή",
+    "nav_experiences": "Εμπειρίες",
+    "nav_gallery": "Gallery",
+    "nav_contact": "Επικοινωνία",
+    "faq": "Συχνές Ερωτήσεις",
+    "terms": "Όροι Χρήσης",
+    "privacy": "Πολιτική Απορρήτου"
+  }
+}

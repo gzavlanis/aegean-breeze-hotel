@@ -1,0 +1,59 @@
+{
+  "Header": {
+    "nav_rooms": "Camere",
+    "nav_experiences": "Esperienze",
+    "nav_gallery": "Galleria",
+    "nav_contact": "Contatti",
+    "nav_book_now": "Prenota",
+    "select_language": "Seleziona lingua",
+    "lang_en": "Inglese",
+    "lang_el": "Greco",
+    "lang_fr": "Francese",
+    "lang_de": "Tedesco",
+    "lang_it": "Italiano",
+    "lang_es": "Spagnolo"
+  },
+  "Hero": {
+    "welcome": "Benvenuti ad Aethra",
+    "tagline": "La Geometria della Serenità Assoluta",
+    "starting_from": "Da 180 € / Notte",
+    "book_now": "Prenota",
+    "check_in": "Arrivo",
+    "check_out": "Partenza",
+    "guests": "Ospiti",
+    "check_availability": "Verifica disponibilità"
+  },
+  "Rooms": {
+    "title": "Il Tuo Soggiorno",
+    "subtitle": "Scopri le nostre camere e suite minimaliste, progettate per il massimo relax e viste ininterrotte sull'Egeo.",
+    "view_details": "Vedi dettagli",
+    "guests_label": "Ospiti",
+    "per_night": "a notte"
+  },
+  "Experiences": {
+    "title": "Esperienze Egee",
+    "subtitle": "Scopri i nostri servizi unici, progettati per elevare i tuoi sensi sullo sfondo del blu infinito.",
+    "discover": "Scopri",
+    "dining": "Alta Cucina",
+    "dining_desc": "Assapora l'autentica cucina dell'Egeo con ingredienti locali freschi e vista sul tramonto.",
+    "wellness": "Spa & Benessere",
+    "wellness_desc": "Rilassati con la cristalloterapia geometrica e trattamenti olistici per il ringiovanimento.",
+    "yachting": "Yacht Privati",
+    "yachting_desc": "Scopri insenature nascoste e spiagge incontaminate con la nostra flotta privata.",
+    "wine": "Degustazione di Vini",
+    "wine_desc": "Visita i vigneti storici dell'isola e degusta varietà rare con i nostri sommelier."
+  },
+  "Gallery": {
+    "title": "Visual History",
+    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+  },
+  "Footer": {
+    "description": "La definizione del lusso minimalista cicladico. Un santuario di pace nel profondo blu dell'Egeo.",
+    "explore": "Esplora",
+    "info": "Informazioni",
+    "newsletter": "Newsletter",
+    "newsletter_desc": "Iscriviti per ricevere offerte esclusive e novità.",
+    "email_placeholder": "La tua email",
+    "rights": "Tutti i diritti riservati."
+  }
+}

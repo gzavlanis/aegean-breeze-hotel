@@ -1,0 +1,59 @@
+{
+  "Header": {
+    "nav_rooms": "Habitaciones",
+    "nav_experiences": "Experiencias",
+    "nav_gallery": "Galería",
+    "nav_contact": "Contacto",
+    "nav_book_now": "Reservar",
+    "select_language": "Seleccionar idioma",
+    "lang_en": "Inglés",
+    "lang_el": "Griego",
+    "lang_fr": "Francés",
+    "lang_de": "Alemán",
+    "lang_it": "Italiano",
+    "lang_es": "Español"
+  },
+  "Hero": {
+    "welcome": "Bienvenidos a Aethra",
+    "tagline": "La Geometría de la Serenidad Absoluta",
+    "starting_from": "Desde 180 € / Noche",
+    "book_now": "Reservar",
+    "check_in": "Llegada",
+    "check_out": "Salida",
+    "guests": "Huéspedes",
+    "check_availability": "Ver disponibilidad"
+  },
+  "Rooms": {
+    "title": "Su Estancia",
+    "subtitle": "Descubra nuestras habitaciones y suites minimalistas, diseñadas para la máxima relajación y vistas despejadas al mar Egeo.",
+    "view_details": "Ver detalles",
+    "guests_label": "Huéspedes",
+    "per_night": "por noche"
+  },
+  "Experiences": {
+    "title": "Experiencias del Egeo",
+    "subtitle": "Descubra nuestras exclusivas comodidades, diseñadas para elevar sus sentidos con el azul infinito de fondo.",
+    "discover": "Descubrir",
+    "dining": "Alta Gastronomía",
+    "dining_desc": "Pruebe la auténtica cocina del Egeo con ingredientes locales frescos y vistas al atardecer.",
+    "wellness": "Spa y Bienestar",
+    "wellness_desc": "Relájese con la terapia de piedras geométricas y tratamientos holísticos para el rejuvenecimiento.",
+    "yachting": "Yates Privados",
+    "yachting_desc": "Descubra calas escondidas y playas vírgenes con nuestra flota privada.",
+    "wine": "Cata de Vinos",
+    "wine_desc": "Visite viñedos históricos y deguste variedades raras con nuestros sumilleres."
+  },
+  "Gallery": {
+    "title": "Visual History",
+    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+  },
+  "Footer": {
+    "description": "La definición del lujo minimalista cicládico. Un santuario de paz en el azul profundo del mar Egeo.",
+    "explore": "Explorar",
+    "info": "Información",
+    "newsletter": "Boletín",
+    "newsletter_desc": "Suscríbase para recibir ofertas exclusivas y noticias.",
+    "email_placeholder": "Su correo electrónico",
+    "rights": "Todos los derechos reservados."
+  }
+}

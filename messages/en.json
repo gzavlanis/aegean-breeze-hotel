@@ -1,0 +1,94 @@
+{
+  "Header": {
+    "nav_rooms": "Rooms",
+    "nav_experiences": "Experiences",
+    "nav_gallery": "Gallery",
+    "nav_contact": "Contact",
+    "nav_book_now": "Book Now",
+    "select_language": "Select Language",
+    "lang_en": "English",
+    "lang_el": "Greek",
+    "lang_fr": "French",
+    "lang_de": "German",
+    "lang_it": "Italian",
+    "lang_es": "Spanish"
+  },
+  "Hero": {
+    "welcome": "Welcome to Aethra",
+    "tagline": "The Geometry of Absolute Serenity",
+    "starting_from": "From €180 / Night",
+    "book_now": "Book Now",
+    "check_in": "Check-in",
+    "check_out": "Check-out",
+    "guests": "Guests",
+    "check_availability": "Check Availability"
+  },
+  "Rooms": {
+    "title": "Your Stay",
+    "subtitle": "Discover our minimalist rooms and suites, designed for ultimate relaxation and unobstructed views of the Aegean.",
+    "view_details": "View Details",
+    "guests_label": "Guests",
+    "per_night": "per night",
+    "from": "FROM",
+    "amenity_wifi": "Free WiFi",
+    "amenity_ac": "Air Conditioning",
+    "amenity_pool": "Private Pool",
+    "amenity_coffee": "Espresso Machine",
+    "amenity_tv": "Smart TV",
+    "amenity_parking": "Free Parking"
+  },
+  "Experiences": {
+    "title": "Aegean Experiences",
+    "subtitle": "Discover our unique amenities, designed to elevate your senses against the backdrop of endless blue.",
+    "discover": "Discover",
+    "dining": "Fine Dining",
+    "dining_desc": "Taste authentic Aegean cuisine with fresh local ingredients and sunset views.",
+    "wellness": "Spa & Wellness",
+    "wellness_desc": "Relax with geometric stone therapy and holistic treatments for rejuvenation.",
+    "yachting": "Private Yachting",
+    "yachting_desc": "Discover hidden coves and pristine beaches with our private fleet.",
+    "wine": "Wine Tasting",
+    "wine_desc": "Tour historical vineyards and taste rare varieties with our sommeliers."
+  },
+  "Gallery": {
+    "title": "Visual History",
+    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+  },
+  "Testimonials": {
+    "title": "Guest Reviews",
+    "subtitle": "The experiences of our guests, captured against the backdrop of the endless Aegean blue."
+  },
+  "Contact": {
+    "title": "Contact",
+    "subtitle": "We are here to design your ideal stay together. Contact us for reservations or special requests.",
+    "location_label": "Location",
+    "location_value": "Imerovigli, Santorini 847 00",
+    "phone_label": "Phone",
+    "name_label": "Full Name",
+    "email_label": "Email",
+    "subject_label": "Subject",
+    "subject_general": "General Inquiries",
+    "subject_booking": "Room Reservation",
+    "subject_event": "Event Organization",
+    "subject_other": "Other",
+    "message_label": "Message",
+    "message_placeholder": "How can we help you?",
+    "submit_button": "Send Message"
+  },
+  "Footer": {
+    "description": "The definition of Cycladic minimalist luxury. A sanctuary of peace in the deep blue of the Aegean.",
+    "explore": "Explore",
+    "info": "Information",
+    "newsletter": "Newsletter",
+    "newsletter_desc": "Subscribe to receive exclusive offers and news.",
+    "email_placeholder": "Your email",
+    "rights": "All rights reserved.",
+    "nav_rooms": "Rooms",
+    "nav_experiences": "Experiences",
+    "nav_gallery": "Gallery",
+    "nav_contact": "Contact",
+    "faq": "FAQ",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy"
+  }
+}

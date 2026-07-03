@@ -1,0 +1,59 @@
+{
+  "Header": {
+    "nav_rooms": "Chambres",
+    "nav_experiences": "Expériences",
+    "nav_gallery": "Galerie",
+    "nav_contact": "Contact",
+    "nav_book_now": "Réserver",
+    "select_language": "Choisir la langue",
+    "lang_en": "Anglais",
+    "lang_el": "Grec",
+    "lang_fr": "Français",
+    "lang_de": "Allemand",
+    "lang_it": "Italien",
+    "lang_es": "Espagnol"
+  },
+  "Hero": {
+    "welcome": "Bienvenue à Aethra",
+    "tagline": "La Géométrie de la Sérénité Absolue",
+    "starting_from": "À partir de 180 € / Nuit",
+    "book_now": "Réserver",
+    "check_in": "Arrivée",
+    "check_out": "Départ",
+    "guests": "Personnes",
+    "check_availability": "Vérifier la disponibilité"
+  },
+  "Rooms": {
+    "title": "Votre Séjour",
+    "subtitle": "Découvrez nos chambres et suites minimalistes, conçues pour une détente absolue et une vue imprenable sur la mer Égée.",
+    "view_details": "Voir les détails",
+    "guests_label": "Personnes",
+    "per_night": "par nuit"
+  },
+  "Experiences": {
+    "title": "Expériences Égéennes",
+    "subtitle": "Découvrez nos services uniques, conçus pour éveiller vos sens avec le bleu infini en toile de fond.",
+    "discover": "Découvrir",
+    "dining": "Haute Gastronomie",
+    "dining_desc": "Goûtez à la cuisine authentique de la mer Égée avec des ingrédients locaux frais et une vue sur le coucher du soleil.",
+    "wellness": "Spa & Bien-être",
+    "wellness_desc": "Détendez-vous avec la lithothérapie géométrique et des traitements holistiques pour un rajeunissement total.",
+    "yachting": "Yachting Privé",
+    "yachting_desc": "Découvrez des criques cachées et des plages immaculées avec notre flotte privée.",
+    "wine": "Dégustation de Vins",
+    "wine_desc": "Visitez les vignobles historiques de l'île et dégustez des variétés rares avec nos sommeliers."
+  },
+  "Gallery": {
+    "title": "Visual History",
+    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+  },
+  "Footer": {
+    "description": "La définition du luxe minimaliste cycladique. Un sanctuaire de paix dans le bleu profond de la mer Égée.",
+    "explore": "Explorer",
+    "info": "Informations",
+    "newsletter": "Newsletter",
+    "newsletter_desc": "Inscrivez-vous pour recevoir nos offres exclusives et nos actualités.",
+    "email_placeholder": "Votre e-mail",
+    "rights": "Tous droits réservés."
+  }
+}

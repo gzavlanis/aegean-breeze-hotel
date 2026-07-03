@@ -1,0 +1,59 @@
+{
+  "Header": {
+    "nav_rooms": "Zimmer",
+    "nav_experiences": "Erlebnisse",
+    "nav_gallery": "Galerie",
+    "nav_contact": "Kontakt",
+    "nav_book_now": "Buchen",
+    "select_language": "Sprache wählen",
+    "lang_en": "Englisch",
+    "lang_el": "Griechisch",
+    "lang_fr": "Französisch",
+    "lang_de": "Deutsch",
+    "lang_it": "Italienisch",
+    "lang_es": "Spanisch"
+  },
+  "Hero": {
+    "welcome": "Willkommen bei Aethra",
+    "tagline": "Die Geometrie absoluter Gelassenheit",
+    "starting_from": "Ab 180 € / Nacht",
+    "book_now": "Buchen",
+    "check_in": "Anreise",
+    "check_out": "Abreise",
+    "guests": "Gäste",
+    "check_availability": "Verfügbarkeit prüfen"
+  },
+  "Rooms": {
+    "title": "Ihr Aufenthalt",
+    "subtitle": "Entdecken Sie unsere minimalistischen Zimmer und Suiten, die für ultimative Entspannung und unverbauten Blick auf die Ägäis gestaltet wurden.",
+    "view_details": "Details ansehen",
+    "guests_label": "Gäste",
+    "per_night": "pro Nacht"
+  },
+  "Experiences": {
+    "title": "Ägäische Erlebnisse",
+    "subtitle": "Entdecken Sie unsere einzigartigen Annehmlichkeiten, die Ihre Sinne vor der Kulisse des endlosen Blaus beflügeln.",
+    "discover": "Entdecken",
+    "dining": "Feine Küche",
+    "dining_desc": "Probieren Sie authentische ägäische Küche mit frischen lokalen Zutaten und Blick auf den Sonnenuntergang.",
+    "wellness": "Spa & Wellness",
+    "wellness_desc": "Entspannen Sie sich mit geometrischer Steintherapie und ganzheitlichen Behandlungen zur Verjüngung.",
+    "yachting": "Private Yachten",
+    "yachting_desc": "Entdecken Sie versteckte Buchten und unberührte Strände mit unserer privaten Flotte.",
+    "wine": "Weinprobe",
+    "wine_desc": "Besichtigen Sie historische Weinberge und probieren Sie seltene Sorten mit unseren Sommeliers."
+  },
+  "Gallery": {
+    "title": "Visual History",
+    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+  },
+  "Footer": {
+    "description": "Die Definition von kykladischem minimalistischem Luxus. Ein Heiligtum des Friedens im tiefen Blau der Ägäis.",
+    "explore": "Erkunden",
+    "info": "Informationen",
+    "newsletter": "Newsletter",
+    "newsletter_desc": "Abonnieren Sie, um exklusive Angebote und Neuigkeiten zu erhalten.",
+    "email_placeholder": "Ihre E-Mail",
+    "rights": "Alle Rechte vorbehalten."
+  }
+}
