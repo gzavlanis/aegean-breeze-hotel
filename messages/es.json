@@ -6,10 +6,10 @@
     "nav_contact": "Contacto",
     "nav_book_now": "Reservar",
     "select_language": "Seleccionar idioma",
-    "lang_en": "Inglés",
-    "lang_el": "Griego",
-    "lang_fr": "Francés",
-    "lang_de": "Alemán",
+    "lang_en": "English",
+    "lang_el": "Ελληνικά",
+    "lang_fr": "Français",
+    "lang_de": "Deutsch",
     "lang_it": "Italiano",
     "lang_es": "Español"
   },
@@ -28,7 +28,14 @@
     "subtitle": "Descubra nuestras habitaciones y suites minimalistas, diseñadas para la máxima relajación y vistas despejadas al mar Egeo.",
     "view_details": "Ver detalles",
     "guests_label": "Huéspedes",
-    "per_night": "por noche"
+    "per_night": "por noche",
+    "from": "A PARTIR DE",
+    "amenity_wifi": "Wi-Fi Gratis",
+    "amenity_ac": "Aire Acondicionado",
+    "amenity_pool": "Piscina Privada",
+    "amenity_coffee": "Cafetera Espresso",
+    "amenity_tv": "Smart TV",
+    "amenity_parking": "Aparcamiento Gratis"
   },
   "Experiences": {
     "title": "Experiencias del Egeo",
@@ -45,7 +52,28 @@
   },
   "Gallery": {
     "title": "Visual History",
-    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+    "subtitle": "Momentos de absoluta serenidad. La geometría de la arquitectura se encuentra con la luz de las Cícladas."
+  },
+  "Testimonials": {
+    "title": "Opiniones de los Huéspedes",
+    "subtitle": "Las experiencias de nuestros huéspedes, plasmadas sobre el fondo del azul infinito del Egeo."
+  },
+  "Contact": {
+    "title": "Contacto",
+    "subtitle": "Estamos aquí para diseñar juntos su estancia ideal. Contáctenos para reservas o solicitudes especiales.",
+    "location_label": "Ubicación",
+    "location_value": "Imerovigli, Santorini 847 00",
+    "phone_label": "Teléfono",
+    "name_label": "Nombre Completo",
+    "email_label": "Correo Electrónico",
+    "subject_label": "Asunto",
+    "subject_general": "Consultas Generales",
+    "subject_booking": "Reserva de Habitación",
+    "subject_event": "Organización de Eventos",
+    "subject_other": "Otro",
+    "message_label": "Mensaje",
+    "message_placeholder": "¿Cómo podemos ayudarle?",
+    "submit_button": "Enviar Mensaje"
   },
   "Footer": {
     "description": "La definición del lujo minimalista cicládico. Un santuario de paz en el azul profundo del mar Egeo.",
@@ -54,6 +82,13 @@
     "newsletter": "Boletín",
     "newsletter_desc": "Suscríbase para recibir ofertas exclusivas y noticias.",
     "email_placeholder": "Su correo electrónico",
-    "rights": "Todos los derechos reservados."
+    "rights": "Todos los derechos reservados.",
+    "nav_rooms": "Habitaciones",
+    "nav_experiences": "Experiencias",
+    "nav_gallery": "Galería",
+    "nav_contact": "Contacto",
+    "faq": "Preguntas Frecuentes",
+    "terms": "Términos de Uso",
+    "privacy": "Política de Privacidad"
   }
 }

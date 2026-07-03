@@ -6,12 +6,12 @@
     "nav_contact": "Kontakt",
     "nav_book_now": "Buchen",
     "select_language": "Sprache wählen",
-    "lang_en": "Englisch",
-    "lang_el": "Griechisch",
-    "lang_fr": "Französisch",
+    "lang_en": "English",
+    "lang_el": "Ελληνικά",
+    "lang_fr": "Français",
     "lang_de": "Deutsch",
-    "lang_it": "Italienisch",
-    "lang_es": "Spanisch"
+    "lang_it": "Italiano",
+    "lang_es": "Español"
   },
   "Hero": {
     "welcome": "Willkommen bei Aethra",
@@ -28,7 +28,14 @@
     "subtitle": "Entdecken Sie unsere minimalistischen Zimmer und Suiten, die für ultimative Entspannung und unverbauten Blick auf die Ägäis gestaltet wurden.",
     "view_details": "Details ansehen",
     "guests_label": "Gäste",
-    "per_night": "pro Nacht"
+    "per_night": "pro Nacht",
+    "from": "AB",
+    "amenity_wifi": "Kostenloses WLAN",
+    "amenity_ac": "Klimaanlage",
+    "amenity_pool": "Privater Pool",
+    "amenity_coffee": "Espressomaschine",
+    "amenity_tv": "Smart-TV",
+    "amenity_parking": "Kostenloser Parkplatz"
   },
   "Experiences": {
     "title": "Ägäische Erlebnisse",
@@ -45,7 +52,28 @@
   },
   "Gallery": {
     "title": "Visual History",
-    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+    "subtitle": "Momente absoluter Gelassenheit. Die Geometrie der Architektur trifft auf das kykladische Licht."
+  },
+  "Testimonials": {
+    "title": "Gästebewertungen",
+    "subtitle": "Die Erlebnisse unserer Gäste, festgehalten vor dem Hintergrund des endlosen ägäischen Blaus."
+  },
+  "Contact": {
+    "title": "Kontakt",
+    "subtitle": "Wir sind hier, um gemeinsam Ihren idealen Aufenthalt zu planen. Kontaktieren Sie uns für Reservierungen oder Sonderwünsche.",
+    "location_label": "Standort",
+    "location_value": "Imerovigli, Santorin 847 00",
+    "phone_label": "Telefon",
+    "name_label": "Vollständiger Name",
+    "email_label": "E-Mail",
+    "subject_label": "Betreff",
+    "subject_general": "Allgemeine Anfragen",
+    "subject_booking": "Zimmerreservierung",
+    "subject_event": "Veranstaltungsorganisation",
+    "subject_other": "Andere",
+    "message_label": "Nachricht",
+    "message_placeholder": "Wie können wir Ihnen helfen?",
+    "submit_button": "Nachricht Senden"
   },
   "Footer": {
     "description": "Die Definition von kykladischem minimalistischem Luxus. Ein Heiligtum des Friedens im tiefen Blau der Ägäis.",
@@ -54,6 +82,13 @@
     "newsletter": "Newsletter",
     "newsletter_desc": "Abonnieren Sie, um exklusive Angebote und Neuigkeiten zu erhalten.",
     "email_placeholder": "Ihre E-Mail",
-    "rights": "Alle Rechte vorbehalten."
+    "rights": "Alle Rechte vorbehalten.",
+    "nav_rooms": "Zimmer",
+    "nav_experiences": "Erlebnisse",
+    "nav_gallery": "Galerie",
+    "nav_contact": "Kontakt",
+    "faq": "Häufig gestellte Fragen",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutz-Bestimmungen"
   }
 }

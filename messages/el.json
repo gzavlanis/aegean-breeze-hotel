@@ -6,12 +6,12 @@
     "nav_contact": "Επικοινωνια",
     "nav_book_now": "Κρατηση",
     "select_language": "Επιλογη Γλωσσας",
-    "lang_en": "Αγγλικά",
+    "lang_en": "English",
     "lang_el": "Ελληνικά",
-    "lang_fr": "Γαλλικά",
-    "lang_de": "Γερμανικά",
-    "lang_it": "Ιταλικά",
-    "lang_es": "Ισπανικά"
+    "lang_fr": "Français",
+    "lang_de": "Deutsch",
+    "lang_it": "Italiano",
+    "lang_es": "Español"
   },
   "Hero": {
     "welcome": "Καλωσορισατε στο Aethra",
@@ -52,7 +52,7 @@
   },
   "Gallery": {
     "title": "Visual History",
-    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+    "subtitle": "Στιγμές απόλυτης γαλήνης. Η γεωμετρία της αρχιτεκτονικής συναντά το κυκλαδίτικο φως."
   },
   "Testimonials": {
     "title": "Ειπαν για εμας",
@@ -88,7 +88,7 @@
     "nav_gallery": "Gallery",
     "nav_contact": "Επικοινωνία",
     "faq": "Συχνές Ερωτήσεις",
-    "terms": "Όροι Χρήσης",
+    "terms": "Όροι Χรียσης",
     "privacy": "Πολιτική Απορρήτου"
   }
 }

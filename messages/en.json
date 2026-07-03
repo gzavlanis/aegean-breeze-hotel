@@ -7,11 +7,11 @@
     "nav_book_now": "Book Now",
     "select_language": "Select Language",
     "lang_en": "English",
-    "lang_el": "Greek",
-    "lang_fr": "French",
-    "lang_de": "German",
-    "lang_it": "Italian",
-    "lang_es": "Spanish"
+    "lang_el": "Ελληνικά",
+    "lang_fr": "Français",
+    "lang_de": "Deutsch",
+    "lang_it": "Italiano",
+    "lang_es": "Español"
   },
   "Hero": {
     "welcome": "Welcome to Aethra",

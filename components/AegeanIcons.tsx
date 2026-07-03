@@ -46,7 +46,6 @@ export const IconClose = ({ className, ...props }: IconProps) => (
 
 export const IconGlobe = ({ className, ...props }: IconProps) => (
     <svg className={cn("w-5 h-5", className)} {...svgProps} {...props}>
-        {/* Ένας γεωμετρικός ρόμβος/πλέγμα αντί για στρογγυλή υδρόγειο */}
         <path d="M2 12L12 2L22 12L12 22Z" />
         <path d="M12 2V22M2 12H22M7 7L17 17M17 7L7 17" />
     </svg>
@@ -54,7 +53,6 @@ export const IconGlobe = ({ className, ...props }: IconProps) => (
 
 export const IconMapPin = ({ className, ...props }: IconProps) => (
     <svg className={cn("w-5 h-5", className)} {...svgProps} {...props}>
-        {/* Τρίγωνο με τετράγωνο αντί για σταγόνα */}
         <path d="M12 22L6 10V4H18V10L12 22Z" />
         <path d="M10 6H14V8H10Z" />
     </svg>
@@ -68,9 +66,9 @@ export const IconPhone = ({ className, ...props }: IconProps) => (
 
 export const IconInstagram = ({ className, ...props }: IconProps) => (
     <svg className={cn("w-5 h-5", className)} {...svgProps} {...props}>
-        <path d="M4 4H20V20H4V4Z" /> {/* Εξωτερικό */}
-        <path d="M9 9H15V15H9V9Z" /> {/* Εσωτερικό */}
-        <path d="M16 6H17V7H16V6Z" /> {/* Flash */}
+        <path d="M4 4H20V20H4V4Z" />
+        <path d="M9 9H15V15H9V9Z" />
+        <path d="M16 6H17V7H16V6Z" />
     </svg>
 );
 
@@ -82,7 +80,6 @@ export const IconFacebook = ({ className, ...props }: IconProps) => (
 
 export const IconX = ({ className, ...props }: IconProps) => (
     <svg className={cn("w-5 h-5", className)} {...svgProps} {...props}>
-        {/* Το νέο logo του Twitter/X είναι ήδη πολύ γεωμετρικό */}
         <path d="M4 4L20 20M20 4L4 20" />
     </svg>
 );
@@ -105,6 +102,8 @@ export const IconBed = ({ className, ...props }: IconProps) => (
         <path d="M2 18V6H4V18H2ZM4 10H22V12H4V10ZM6 10V8H12V10M14 10V8H20V10M20 18H22V12H20V18Z" />
     </svg>
 );
+
+// --- AMENITIES ---
 
 export const IconWifi = ({ className, ...props }: IconProps) => (
     <svg className={cn("w-5 h-5", className)} {...svgProps} {...props}>

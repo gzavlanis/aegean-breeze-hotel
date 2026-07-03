@@ -1,5 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import Header from '@/components/Header'; // Εισαγωγή του Header
+import Footer from '@/components/Footer'; // Εισαγωγή του Footer
 import "../globals.css";
 
 export default async function LocaleLayout({ children, params }: {
@@ -11,9 +13,13 @@ export default async function LocaleLayout({ children, params }: {
 
     return (
         <html lang={locale}>
-        <body>
+        <body className="flex flex-col min-h-screen">
         <NextIntlClientProvider messages={messages}>
-            {children}
+            <Header />
+            <main className="flex-grow">
+                {children}
+            </main>
+            <Footer />
         </NextIntlClientProvider>
         </body>
         </html>

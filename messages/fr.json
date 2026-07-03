@@ -6,16 +6,16 @@
     "nav_contact": "Contact",
     "nav_book_now": "Réserver",
     "select_language": "Choisir la langue",
-    "lang_en": "Anglais",
-    "lang_el": "Grec",
+    "lang_en": "English",
+    "lang_el": "Ελληνικά",
     "lang_fr": "Français",
-    "lang_de": "Allemand",
-    "lang_it": "Italien",
+    "lang_de": "Deutsch",
+    "lang_it": "Italiano",
     "lang_es": "Espagnol"
   },
   "Hero": {
     "welcome": "Bienvenue à Aethra",
-    "tagline": "La Géométrie de la Sérénité Absolue",
+    "tagline": "La Géométrie de la Sérénité Absolute",
     "starting_from": "À partir de 180 € / Nuit",
     "book_now": "Réserver",
     "check_in": "Arrivée",
@@ -28,7 +28,14 @@
     "subtitle": "Découvrez nos chambres et suites minimalistes, conçues pour une détente absolue et une vue imprenable sur la mer Égée.",
     "view_details": "Voir les détails",
     "guests_label": "Personnes",
-    "per_night": "par nuit"
+    "per_night": "par nuit",
+    "from": "À PARTIR DE",
+    "amenity_wifi": "Wi-Fi Gratuit",
+    "amenity_ac": "Climatisation",
+    "amenity_pool": "Piscine Privée",
+    "amenity_coffee": "Machine Espresso",
+    "amenity_tv": "Smart TV",
+    "amenity_parking": "Parking Gratuit"
   },
   "Experiences": {
     "title": "Expériences Égéennes",
@@ -45,7 +52,28 @@
   },
   "Gallery": {
     "title": "Visual History",
-    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+    "subtitle": "Moments de sérénité absolue. La géométrie de l'architecture rencontre la lumière des Cyclades."
+  },
+  "Testimonials": {
+    "title": "Avis des Clients",
+    "subtitle": "Les expériences de nos clients, capturées sur fond de bleu infini de la mer Égée."
+  },
+  "Contact": {
+    "title": "Contact",
+    "subtitle": "Nous sommes là pour concevoir ensemble votre séjour idéal. Contactez-nous pour des réservations ou des demandes particulières.",
+    "location_label": "Emplacement",
+    "location_value": "Imerovigli, Santorin 847 00",
+    "phone_label": "Téléphone",
+    "name_label": "Nom Complet",
+    "email_label": "E-mail",
+    "subject_label": "Sujet",
+    "subject_general": "Demandes Générales",
+    "subject_booking": "Réservation de Chambre",
+    "subject_event": "Organisation d'Événements",
+    "subject_other": "Autre",
+    "message_label": "Message",
+    "message_placeholder": "Comment pouvons-nous vous aider?",
+    "submit_button": "Envoyer le Message"
   },
   "Footer": {
     "description": "La définition du luxe minimaliste cycladique. Un sanctuaire de paix dans le bleu profond de la mer Égée.",
@@ -54,6 +82,13 @@
     "newsletter": "Newsletter",
     "newsletter_desc": "Inscrivez-vous pour recevoir nos offres exclusives et nos actualités.",
     "email_placeholder": "Votre e-mail",
-    "rights": "Tous droits réservés."
+    "rights": "Tous droits réservés.",
+    "nav_rooms": "Chambres",
+    "nav_experiences": "Expériences",
+    "nav_gallery": "Galerie",
+    "nav_contact": "Contact",
+    "faq": "FAQ",
+    "terms": "Conditions d'Utilisation",
+    "privacy": "Politique de Confidentialité"
   }
 }

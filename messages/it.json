@@ -6,12 +6,12 @@
     "nav_contact": "Contatti",
     "nav_book_now": "Prenota",
     "select_language": "Seleziona lingua",
-    "lang_en": "Inglese",
-    "lang_el": "Greco",
-    "lang_fr": "Francese",
-    "lang_de": "Tedesco",
+    "lang_en": "English",
+    "lang_el": "Ελληνικά",
+    "lang_fr": "Français",
+    "lang_de": "Deutsch",
     "lang_it": "Italiano",
-    "lang_es": "Spagnolo"
+    "lang_es": "Español"
   },
   "Hero": {
     "welcome": "Benvenuti ad Aethra",
@@ -28,7 +28,14 @@
     "subtitle": "Scopri le nostre camere e suite minimaliste, progettate per il massimo relax e viste ininterrotte sull'Egeo.",
     "view_details": "Vedi dettagli",
     "guests_label": "Ospiti",
-    "per_night": "a notte"
+    "per_night": "a notte",
+    "from": "A PARTIRE DA",
+    "amenity_wifi": "Wi-Fi Gratuit",
+    "amenity_ac": "Aria Condizionata",
+    "amenity_pool": "Piscina Privata",
+    "amenity_coffee": "Macchina del Caffè",
+    "amenity_tv": "Smart TV",
+    "amenity_parking": "Parcheggio Gratuito"
   },
   "Experiences": {
     "title": "Esperienze Egee",
@@ -45,7 +52,28 @@
   },
   "Gallery": {
     "title": "Visual History",
-    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+    "subtitle": "Momenti di assoluta serenità. La geometria dell'architettura incontra la luce delle Cicladi."
+  },
+  "Testimonials": {
+    "title": "Recensioni degli Ospiti",
+    "subtitle": "Le esperienze dei nostri ospiti, catturate sullo sfondo dell'infinito blu dell'Egeo."
+  },
+  "Contact": {
+    "title": "Contatti",
+    "subtitle": "Siamo qui per progettare insieme il tuo soggiorno ideale. Contattaci per prenotazioni o richieste speciali.",
+    "location_label": "Posizione",
+    "location_value": "Imerovigli, Santorini 847 00",
+    "phone_label": "Telefono",
+    "name_label": "Nome Completo",
+    "email_label": "E-mail",
+    "subject_label": "Oggetto",
+    "subject_general": "Informazioni Generali",
+    "subject_booking": "Prenotazione Camera",
+    "subject_event": "Organizzazione Eventi",
+    "subject_other": "Altro",
+    "message_label": "Messaggio",
+    "message_placeholder": "Come possiamo aiutarti?",
+    "submit_button": "Invia Messaggio"
   },
   "Footer": {
     "description": "La definizione del lusso minimalista cicladico. Un santuario di pace nel profondo blu dell'Egeo.",
@@ -54,6 +82,13 @@
     "newsletter": "Newsletter",
     "newsletter_desc": "Iscriviti per ricevere offerte esclusive e novità.",
     "email_placeholder": "La tua email",
-    "rights": "Tutti i diritti riservati."
+    "rights": "Tutti i diritti riservati.",
+    "nav_rooms": "Camere",
+    "nav_experiences": "Esperienze",
+    "nav_gallery": "Galleria",
+    "nav_contact": "Contatti",
+    "faq": "Domande Frequenti",
+    "terms": "Termini di Utilizzo",
+    "privacy": "Informativa sulla Privacy"
   }
 }
