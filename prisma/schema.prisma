@@ -1,0 +1,82 @@
+generator client {
+  provider   = "prisma-client-js"
+  output     = "./generated/client"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+// 1. Πίνακας για τα Landmarks του Χάρτη
+model Landmark {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  nameKey     String
+  descKey     String
+  distance    String
+  image       String
+  websiteUrl  String
+  lat         Float
+  lng         Float
+  category    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("landmarks")
+}
+
+// 2. Πίνακας για τις Σουίτες / Δωμάτια
+model Room {
+  id          Int       @id @default(autoincrement())
+  slug        String    @unique
+  nameKey     String
+  descKey     String
+  basePrice   Decimal   @db.Decimal(10, 2)
+  maxGuests   Int
+  sqMeters    Int
+  amenities   Json
+  mainImage   String
+  images      Json
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  bookings    Booking[]
+  @@map("rooms")
+}
+
+// 3. Πίνακας για τη Μηχανή Κρατήσεων
+model Booking {
+  id            Int           @id @default(autoincrement())
+  roomId        Int
+  customerName  String
+  customerEmail String
+  checkIn       DateTime      @db.Date
+  checkOut      DateTime      @db.Date
+  totalPrice    Decimal       @db.Decimal(10, 2)
+  status        BookingStatus @default(PENDING)
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  room          Room          @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@map("bookings")
+}
+
+// 4. Πίνακας για τις Εμπειρίες
+model Experience {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  nameKey     String
+  descKey     String
+  price       Decimal  @db.Decimal(10, 2)
+  duration    String
+  mainImage   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("experiences")
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}

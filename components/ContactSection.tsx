@@ -1,11 +1,70 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { IconMapPin, IconPhone, IconArrowRight } from "./AegeanIcons";
 
 export default function ContactSection() {
     const t = useTranslations("Contact");
+
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: t('subject_general'), // Default value
+        message: ""
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState<{ type: "success" | "error" | null; msg: string }>({
+        type: null,
+        msg: ""
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        setFormData(prev => ({
+            ...prev,
+            [e.target.name]: e.target.value
+        }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus({ type: null, msg: "" });
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                setStatus({
+                    type: "error",
+                    msg: data.error || "Κάτι πήγε στραβά. Παρακαλώ δοκιμάστε ξανά."
+                });
+            } else {
+                setStatus({
+                    type: "success",
+                    msg: "Το μήνυμά σας στάλθηκε με επιτυχία! Ευχαριστούμε."
+                });
+                setFormData({
+                    name: "",
+                    email: "",
+                    subject: t('subject_general'),
+                    message: ""
+                });
+            }
+        } catch (err) {
+            setStatus({ type: "error", msg: "Αποτυχία σύνδεσης με τον διακομιστή." });
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <section className="py-24 bg-white px-6">
@@ -56,12 +115,17 @@ export default function ContactSection() {
                     </div>
 
                     <div className="lg:w-1/2 bg-aegean-white p-8 md:p-12 border border-aegean-mist">
-                        <form onSubmit={(e) => e.preventDefault()} className="space-y-8">
+                        {/* 5. ΔΙΟΡΘΩΣΗ: Προσθήκη του onSubmit handler */}
+                        <form onSubmit={handleSubmit} className="space-y-8">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="relative group">
                                     <label className="text-[10px] font-bold uppercase tracking-widest text-aegean-sky mb-2 block">{t('name_label')}</label>
                                     <input
                                         type="text"
+                                        name="name"
+                                        required
+                                        value={formData.name}
+                                        onChange={handleChange}
                                         className="w-full bg-transparent border-b border-aegean-mist focus:border-aegean-deep outline-none py-2 text-sm font-light transition-colors rounded-none px-0"
                                         placeholder="John Doe"
                                     />
@@ -70,6 +134,10 @@ export default function ContactSection() {
                                     <label className="text-[10px] font-bold uppercase tracking-widest text-aegean-sky mb-2 block">{t('email_label')}</label>
                                     <input
                                         type="email"
+                                        name="email"
+                                        required
+                                        value={formData.email}
+                                        onChange={handleChange}
                                         className="w-full bg-transparent border-b border-aegean-mist focus:border-aegean-deep outline-none py-2 text-sm font-light transition-colors rounded-none px-0"
                                         placeholder="john@example.com"
                                     />
@@ -78,30 +146,48 @@ export default function ContactSection() {
 
                             <div className="relative group">
                                 <label className="text-[10px] font-bold uppercase tracking-widest text-aegean-sky mb-2 block">{t('subject_label')}</label>
-                                <select className="w-full bg-transparent border-b border-aegean-mist focus:border-aegean-deep outline-none py-2 text-sm font-light transition-colors rounded-none px-0 appearance-none">
-                                    <option>{t('subject_general')}</option>
-                                    <option>{t('subject_booking')}</option>
-                                    <option>{t('subject_event')}</option>
-                                    <option>{t('subject_other')}</option>
+                                <select
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    className="w-full bg-transparent border-b border-aegean-mist focus:border-aegean-deep outline-none py-2 text-sm font-light transition-colors rounded-none px-0 appearance-none cursor-pointer"
+                                >
+                                    <option value={t('subject_general')}>{t('subject_general')}</option>
+                                    <option value={t('subject_booking')}>{t('subject_booking')}</option>
+                                    <option value={t('subject_event')}>{t('subject_event')}</option>
+                                    <option value={t('subject_other')}>{t('subject_other')}</option>
                                 </select>
                             </div>
 
                             <div className="relative group">
                                 <label className="text-[10px] font-bold uppercase tracking-widest text-aegean-sky mb-2 block">{t('message_label')}</label>
                                 <textarea
+                                    name="message"
+                                    required
                                     rows={5}
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     className="w-full bg-transparent border-b border-aegean-mist focus:border-aegean-deep outline-none py-2 text-sm font-light transition-colors rounded-none px-0 resize-none"
                                     placeholder={t('message_placeholder')}
                                 ></textarea>
                             </div>
 
+                            {/* 6. Feedback Messages UI */}
+                            {status.type && (
+                                <div className={`text-xs uppercase tracking-widest font-bold ${status.type === "success" ? "text-emerald-600" : "text-red-500"}`}>
+                                    {status.msg}
+                                </div>
+                            )}
+
                             <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="w-full bg-aegean-deep text-white py-5 text-xs font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-4 group transition-all"
+                                type="submit"
+                                disabled={loading}
+                                whileHover={{ scale: loading ? 1 : 1.02 }}
+                                whileTap={{ scale: loading ? 1 : 0.98 }}
+                                className={`w-full bg-aegean-deep text-white py-5 text-xs font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-4 group transition-all ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
                             >
-                                {t('submit_button')}
-                                <IconArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                                {loading ? "SENDING..." : t('submit_button')}
+                                {!loading && <IconArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />}
                             </motion.button>
                         </form>
                     </div>

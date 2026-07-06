@@ -1,37 +1,20 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { IconArrowRight } from "./AegeanIcons";
 
-// --- MOCK EXPERIENCES DATA ---
-const mockExperiences = [
-    {
-        id: 1,
-        translationKey: "dining",
-        image: "https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=1000&auto=format&fit=crop",
-        link: "/dining",
-    },
-    {
-        id: 2,
-        translationKey: "wellness",
-        image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1000&auto=format&fit=crop",
-        link: "/spa",
-    },
-    {
-        id: 3,
-        translationKey: "yachting",
-        image: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=1000&auto=format&fit=crop",
-        link: "/experiences/yachting",
-    },
-    {
-        id: 4,
-        translationKey: "wine",
-        image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1000&auto=format&fit=crop",
-        link: "/experiences/wine-tasting",
-    },
-];
+interface ExperienceItem {
+    id: number;
+    slug: string;
+    nameKey: string;
+    descKey: string;
+    price: number;
+    duration: string;
+    mainImage: string;
+}
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -52,6 +35,29 @@ const itemVariants: Variants = {
 
 export default function Experiences() {
     const t = useTranslations("Experiences");
+    const [experiences, setExperiences] = useState<ExperienceItem[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch("/api/experiences")
+            .then((res) => res.json())
+            .then((data) => {
+                setExperiences(data);
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.error("Error loading live experiences:", err);
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="w-full h-96 flex items-center justify-center text-aegean-sky tracking-widest text-xs uppercase font-bold">
+                Loading Luxury Experiences...
+            </div>
+        );
+    }
 
     return (
         <section className="py-32 bg-white px-6 overflow-hidden">
@@ -84,7 +90,7 @@ export default function Experiences() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="flex flex-col gap-32"
                 >
-                    {mockExperiences.map((exp, index) => {
+                    {experiences.map((exp, index) => {
                         const isEven = index % 2 !== 0;
 
                         return (
@@ -96,8 +102,8 @@ export default function Experiences() {
                                 <div className="w-full md:w-1/2 relative group">
                                     <div className="relative h-[60vh] min-h-[400px] overflow-hidden border border-aegean-mist rounded-none">
                                         <img
-                                            src={exp.image}
-                                            alt={t(exp.translationKey)}
+                                            src={exp.mainImage}
+                                            alt={t(exp.nameKey)}
                                             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                                         />
                                     </div>
@@ -105,20 +111,25 @@ export default function Experiences() {
                                 </div>
 
                                 <div className="w-full md:w-1/2 flex flex-col justify-center">
-                                    <span className="text-xs font-bold uppercase tracking-widest text-aegean-sky mb-4">
-                                        EXPERIENCE
-                                    </span>
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <span className="text-xs font-bold uppercase tracking-widest text-aegean-sky">
+                                            EXPERIENCE
+                                        </span>
+                                        <span className="text-[10px] px-2 py-0.5 border border-aegean-mist text-aegean-deep/60 rounded-full font-light">
+                                            {exp.duration}
+                                        </span>
+                                    </div>
 
                                     <h3 className="text-3xl font-light tracking-tight text-aegean-deep uppercase mb-8 leading-tight">
-                                        {t(exp.translationKey)}
+                                        {t(exp.nameKey)}
                                     </h3>
 
                                     <p className="text-aegean-deep/80 text-sm leading-relaxed font-light mb-12">
-                                        {t(`${exp.translationKey}_desc`)}
+                                        {t(exp.descKey)}
                                     </p>
 
                                     <Link
-                                        href={exp.link}
+                                        href={`/experiences/${exp.slug}`}
                                         className="group/btn flex items-center gap-4 text-aegean-deep font-bold tracking-widest uppercase text-xs w-max"
                                     >
                                         <span className="border-b border-transparent group-hover/btn:border-aegean-deep transition-colors pb-1">

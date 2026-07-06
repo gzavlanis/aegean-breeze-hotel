@@ -10,7 +10,8 @@ import { IconArrowRight, IconTemple, IconCloche, IconUmbrella } from "@/componen
 import "leaflet/dist/leaflet.css";
 
 interface MapPinItem {
-    id: string;
+    id: number;
+    slug: string;
     nameKey: string;
     descKey: string;
     distance: string;
@@ -20,95 +21,23 @@ interface MapPinItem {
     category: "heritage" | "dining" | "beach";
 }
 
-const mapPinsData: MapPinItem[] = [
-    {
-        id: "pin-oia",
-        nameKey: "oia",
-        descKey: "oia_desc",
-        distance: "10 km",
-        image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=600",
-        websiteUrl: "https://www.visitgreece.gr",
-        position: [36.4618, 25.3753],
-        category: "heritage"
-    },
-    {
-        id: "pin-akrotiri",
-        nameKey: "akrotiri",
-        descKey: "akrotiri_desc",
-        distance: "22 km",
-        image: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?q=80&w=600",
-        websiteUrl: "https://www.odysseus.culture.gr",
-        position: [36.3514, 25.4029],
-        category: "heritage"
-    },
-    {
-        id: "pin-pyrgos",
-        nameKey: "pyrgos",
-        descKey: "pyrgos_desc",
-        distance: "7.5 km",
-        image: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=600",
-        websiteUrl: "https://www.visitgreece.gr",
-        position: [36.3835, 25.4482],
-        category: "heritage"
-    },
-    {
-        id: "pin-selene",
-        nameKey: "selene",
-        descKey: "selene_desc",
-        distance: "8 km",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600",
-        websiteUrl: "https://selene.gr",
-        position: [36.3862, 25.4485],
-        category: "dining"
-    },
-    {
-        id: "pin-amoudi",
-        nameKey: "amoudi",
-        descKey: "amoudi_desc",
-        distance: "11 km",
-        image: "https://images.unsplash.com/photo-1516690561799-46d8f74f90f6?q=80&w=600",
-        websiteUrl: "https://www.visitgreece.gr",
-        position: [36.4594, 25.3692],
-        category: "dining"
-    },
-    {
-        id: "pin-vlychada",
-        nameKey: "vlychada",
-        descKey: "vlychada_desc",
-        distance: "19 km",
-        image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600",
-        websiteUrl: "https://www.visitgreece.gr",
-        position: [36.3394, 25.4322],
-        category: "beach"
-    },
-    {
-        id: "pin-redbeach",
-        nameKey: "redbeach",
-        descKey: "redbeach_desc",
-        distance: "23 km",
-        image: "https://images.unsplash.com/photo-1560242375-73130d210515?q=80&w=600",
-        websiteUrl: "https://www.visitgreece.gr",
-        position: [36.3481, 25.3948],
-        category: "beach"
-    },
-    {
-        id: "pin-perivolos",
-        nameKey: "perivolos",
-        descKey: "perivolos_desc",
-        distance: "17 km",
-        image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?q=80&w=600",
-        websiteUrl: "https://www.visitgreece.gr",
-        position: [36.3458, 25.4655],
-        category: "beach"
-    }
-];
-
 export default function CustomBespokeMap() {
     const t = useTranslations("Explore");
     const [mounted, setMounted] = useState(false);
+    const [pins, setPins] = useState<MapPinItem[]>([]);
 
     useEffect(() => {
         setMounted(true);
+        fetch("/api/landmarks")
+            .then((res) => res.json())
+            .then((data) => {
+                const formattedPins = data.map((pin: any) => ({
+                    ...pin,
+                    position: [pin.lat, pin.lng] as [number, number],
+                }));
+                setPins(formattedPins);
+            })
+            .catch((err) => console.error("Error loading live landmarks:", err));
     }, []);
 
     const getLeafletIcon = (category: "heritage" | "dining" | "beach") => {
@@ -158,7 +87,7 @@ export default function CustomBespokeMap() {
                     url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png"
                 />
 
-                {mapPinsData.map((pin) => (
+                {pins.map((pin) => (
                     <Marker key={pin.id} position={pin.position} icon={getLeafletIcon(pin.category)}>
                         <Popup>
                             <div className="flex flex-col gap-2 p-1 max-w-[240px]">
