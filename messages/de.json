@@ -1,5 +1,6 @@
 {
   "Header": {
+    "nav_about": "Über Uns",
     "nav_rooms": "Zimmer",
     "nav_experiences": "Erlebnisse",
     "nav_gallery": "Galerie",
@@ -38,21 +39,29 @@
     "amenity_parking": "Kostenloser Parkplatz"
   },
   "Experiences": {
-    "title": "Ägäische Erlebnisse",
-    "subtitle": "Entdecken Sie unsere einzigartigen Annehmlichkeiten, die Ihre Sinne vor der Kulisse des endlosen Blaus beflügeln.",
+    "title": "Bespoke Erlebnisse",
+    "subtitle": "Tauchen Sie ein in die unberührte Schönheit und die erlesene Kultur der Kykladen durch sorgfältig kuratierte Reisen.",
     "discover": "Entdecken",
-    "dining": "Feine Küche",
-    "dining_desc": "Probieren Sie authentische ägäische Küche mit frischen lokalen Zutaten und Blick auf den Sonnenuntergang.",
-    "wellness": "Spa & Wellness",
-    "wellness_desc": "Entspannen Sie sich mit geometrischer Steintherapie und ganzheitlichen Behandlungen zur Verjüngung.",
-    "yachting": "Private Yachten",
-    "yachting_desc": "Entdecken Sie versteckte Buchten und unberührte Strände mit unserer privaten Flotte.",
-    "wine": "Weinprobe",
-    "wine_desc": "Besichtigen Sie historische Weinberge und probieren Sie seltene Sorten mit unseren Sommeliers."
+    "dining": "Feinschmecker-Küche",
+    "dining_desc": "Eine avantgardistische Erkundung des ägäischen Erbes mit Zutaten, die täglich in unserem privaten Garten geerntet werden.",
+    "wellness": "Wellness & Alchemie",
+    "wellness_desc": "Ganzheitliche körperliche Erholung, abgestimmt auf die natürlichen Elemente in spektakulären Vulkanhöhlen.",
+    "yachting": "Privates Yachting",
+    "yachting_desc": "Setzen Sie Segel an Bord unserer maßgeschneiderten Katamaran-Flotte, um den legendären Sonnenuntergang von Santorin in absoluter Privatsphäre zu erleben.",
+    "wine": "Weinverkostung",
+    "wine_desc": "Entschlüsseln Sie die intensive Mineralität und das vulkanische Terroir der ältesten wurzelechten Weinberge Europas.",
+    "spec_hours": "Öffnungszeiten",
+    "spec_location": "Ort",
+    "spec_exclusivity": "Exklusivität",
+    "spec_title": "Reise-Spezifikationen",
+    "visual_chronicles": "Visuelle Chroniken",
+    "capturing_moment": "Den Moment Festhalten",
+    "inquire": "Reservierungsanfrage Senden"
   },
   "Gallery": {
-    "title": "Visual History",
-    "subtitle": "Momente absoluter Gelassenheit. Die Geometrie der Architektur trifft auf das kykladische Licht."
+    "title": "Visuelle Erkundung",
+    "subtitle": "Eine Meisterklasse in architektonischer Geometrie, rohen Texturen und reinem kykladischen Licht.",
+    "view_frame": "Bild Anzeigen"
   },
   "Testimonials": {
     "title": "Gästebewertungen",
@@ -73,9 +82,27 @@
     "subject_other": "Andere",
     "message_label": "Nachricht",
     "message_placeholder": "Wie können wir Ihnen helfen?",
-    "submit_button": "Nachricht Senden"
+    "submit_button": "Nachricht Senden",
+    "directory_title": "Direktes Verzeichnis",
+    "directory_subtitle": "Kommunizieren Sie mit unseren Abteilungen",
+    "access_title": "Lage & Anfahrt",
+    "access_subtitle": "Ankunft im Refugium",
+    "access_desc": "Auf dem höchsten Kamm von Imerovigli gelegen, bietet das Aethra absolute Isolation und ist dennoch mühelos erreichbar."
+  },
+  "About": {
+    "title": "Unsere Geschichte",
+    "subtitle": "Architektonische Symmetrie, authentisches kykladisches Erbe und die Kunst der absoluten Stille.",
+    "pillar_villas": "Private Villen & Suiten",
+    "pillar_estate": "Hektar Privates Anwesen",
+    "pillar_chefs": "Michelin-Sterne-Köche",
+    "story_title": "Unsere Philosophie",
+    "arch_title": "Architektonische Geometrie",
+    "arch_desc": "Aethra wurde als physische Erweiterung der vulkanischen Klippe konzipiert. Durch saubere minimalistische Geometrien und traditionelle unterirdische Formen rahmt die Architektur einen kontinuierlichen Dialog zwischen Licht und Schatten, rohem Stein und dem unendlichen Blau der Ägäis.",
+    "service_title": "Maßgeschneiderte Gastfreundschaft",
+    "service_desc": "Wir glauben, dass wahrer Luxus in absoluter Personalisierung liegt. Unser Elite-Team steht Ihnen jederzeit zur Verfügung, um Ihre Bedürfnisse zu antizipieren und einen Aufenthalt zu bieten, der die Konzepte von Privatsphäre und Freiheit neu definiert."
   },
   "Footer": {
+    "nav_about": "Über Uns",
     "description": "Die Definition von kykladischem minimalistischem Luxus. Ein Heiligtum des Friedens im tiefen Blau der Ägäis.",
     "explore": "Erkunden",
     "info": "Informationen",

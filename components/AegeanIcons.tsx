@@ -84,6 +84,12 @@ export const IconX = ({ className, ...props }: IconProps) => (
     </svg>
 );
 
+export const IconWhatsApp = ({ className, ...props }: IconProps) => (
+    <svg className={cn("w-5 h-5", className)} {...svgProps} {...props}>
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+);
+
 export const IconGuests = ({ className, ...props }: IconProps) => (
     <svg className={cn("w-5 h-5", className)} {...svgProps} {...props}>
         <path d="M9 8V4H15V8H9ZM5 20V10H19V20H5ZM9 10V8M15 10V8" />
@@ -199,5 +205,23 @@ export const IconFlagES = ({ className }: { className?: string }) => (
         <rect width="27" height="4.5" fill="#AA151B" />
         <rect width="27" height="9" y="4.5" fill="#F1BF00" />
         <rect width="27" height="4.5" y="13.5" fill="#AA151B" />
+    </svg>
+);
+
+export const IconTemple = ({ className, ...props }: IconProps) => (
+    <svg className={cn("w-5 h-5", className)} {...svgProps} {...props}>
+        <path d="M3 20H21M4 20V10M20 20V10M9 20V10M15 20V10M3 10H21M12 4L3 10L21 10Z" />
+    </svg>
+);
+
+export const IconCloche = ({ className, ...props }: IconProps) => (
+    <svg className={cn("w-5 h-5", className)} {...svgProps} {...props}>
+        <path d="M3 18H21M5 18C5 18 5 10 12 10C19 10 19 18 19 18M12 10V8M10 8H14" />
+    </svg>
+);
+
+export const IconUmbrella = ({ className, ...props }: IconProps) => (
+    <svg className={cn("w-5 h-5", className)} {...svgProps} {...props}>
+        <path d="M12 21V11M12 11C12 11 7 11 4 14M12 11C12 11 17 11 20 14M12 4C16.5 4 20 7.5 20 11H4C4 7.5 7.5 4 12 4Z" />
     </svg>
 );

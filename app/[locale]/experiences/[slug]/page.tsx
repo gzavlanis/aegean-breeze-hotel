@@ -138,7 +138,7 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
                 {/* Technical Details Sidebar Card */}
                 <div className="bg-white border border-aegean-mist p-8 h-max shadow-sm">
                     <h3 className="text-xs font-bold tracking-widest text-aegean-deep uppercase mb-6 pb-4 border-b border-aegean-mist">
-                        JOURNEY SPECIFICATIONS
+                        {t("spec_title")}
                     </h3>
                     <div className="space-y-6">
                         {exp.details.map((detail, idx) => (
@@ -154,7 +154,7 @@ export default async function ExperienceDetailPage({ params }: ExperienceDetailP
                     </div>
 
                     <button className="w-full bg-aegean-deep hover:bg-aegean-sky text-white text-[11px] font-bold tracking-widest uppercase py-4 transition-colors mt-8 rounded-none">
-                        INQUIRE FOR RESERVATION
+                        {t("inquire")}
                     </button>
                 </div>
             </section>

@@ -1,5 +1,7 @@
 {
   "Header": {
+    "nav_about": "About",
+    "nav_explore": "Explore",
     "nav_rooms": "Rooms",
     "nav_experiences": "Experiences",
     "nav_gallery": "Gallery",
@@ -38,21 +40,29 @@
     "amenity_parking": "Free Parking"
   },
   "Experiences": {
-    "title": "Aegean Experiences",
-    "subtitle": "Discover our unique amenities, designed to elevate your senses against the backdrop of endless blue.",
+    "title": "Bespoke Experiences",
+    "subtitle": "Immerse yourself in the raw beauty and refined culture of the Cyclades through meticulously curated journeys.",
     "discover": "Discover",
     "dining": "Fine Dining",
-    "dining_desc": "Taste authentic Aegean cuisine with fresh local ingredients and sunset views.",
-    "wellness": "Spa & Wellness",
-    "wellness_desc": "Relax with geometric stone therapy and holistic treatments for rejuvenation.",
+    "dining_desc": "An avant-garde exploration of Aegean heritage featuring ingredients harvested daily from our private estate.",
+    "wellness": "Wellness & Alchemy",
+    "wellness_desc": "Holistic physical restoration aligned with natural elements inside dramatic volcanic chambers.",
     "yachting": "Private Yachting",
-    "yachting_desc": "Discover hidden coves and pristine beaches with our private fleet.",
+    "yachting_desc": "Set sail aboard our custom catamaran fleet to witness the legendary Santorini sunset in absolute privacy.",
     "wine": "Wine Tasting",
-    "wine_desc": "Tour historical vineyards and taste rare varieties with our sommeliers."
+    "wine_desc": "Decode the intense minerality and volcanic terroir of Europe's oldest self-rooted vineyards.",
+    "spec_hours": "Hours",
+    "spec_location": "Location",
+    "spec_exclusivity": "Exclusivity",
+    "spec_title": "Journey Specifications",
+    "visual_chronicles": "Visual Chronicles",
+    "capturing_moment": "Capturing the Moment",
+    "inquire": "Inquire for Reservation"
   },
   "Gallery": {
-    "title": "Visual History",
-    "subtitle": "Moments of absolute serenity. The geometry of architecture meets the Cycladic light."
+    "title": "Visual Exploration",
+    "subtitle": "A masterclass in architectural geometry, raw textures, and pure Cycladic light.",
+    "view_frame": "View Frame"
   },
   "Testimonials": {
     "title": "Guest Reviews",
@@ -73,9 +83,63 @@
     "subject_other": "Other",
     "message_label": "Message",
     "message_placeholder": "How can we help you?",
-    "submit_button": "Send Message"
+    "submit_button": "Send Message",
+    "directory_title": "Direct Directory",
+    "directory_subtitle": "Communicate with our departments",
+    "access_title": "Location & Access",
+    "access_subtitle": "Arriving at the Sanctuary",
+    "access_desc": "Situated on the highest crest of Imerovigli, Aethra commands absolute isolation while remaining effortlessly accessible."
+  },
+  "About": {
+    "title": "Our Heritage",
+    "subtitle": "Architectural symmetry, authentic Cycladic legacy, and the fine art of absolute stillness.",
+    "pillar_villas": "Private Villas & Suites",
+    "pillar_estate": "Acres of Private Estate",
+    "pillar_chefs": "Michelin-Starred Chefs",
+    "story_title": "Our Philosophy",
+    "arch_title": "Architectural Geometry",
+    "arch_desc": "Aethra was conceived as a physical extension of the volcanic cliffside. Embodying clean minimalist geometries and traditional subterranean forms, the architecture frames a continuous dialogue between light and shadow, raw stone, and the infinite blue of the Aegean.",
+    "service_title": "Bespoke Hospitality",
+    "service_desc": "We believe true luxury resides in absolute personalization. Our elite team is permanently available to anticipate your micro-needs, delivering an immersive stay that redefines the concepts of privacy, freedom, and stillness."
+  },
+  "Explore": {
+    "title": "The Location Guide",
+    "subtitle": "A meticulously curated insider’s guide to the hidden gems, raw heritage, and top culinary spots of Santorini.",
+    "cat_all": "All Locations",
+    "cat_heritage": "Sights & Heritage",
+    "cat_beaches": "Secluded Beaches",
+    "cat_dining": "Gastronomy",
+    "distance": "Distance from Resort",
+    "view_map": "View on Map",
+    "akrotiri": "Akrotiri Prehistoric City",
+    "akrotiri_desc": "One of the most important prehistoric settlements of the Aegean, perfectly preserved under volcanic ash.",
+    "oia": "Oia Castle Sunset Crest",
+    "oia_desc": "The quintessential island panoramic view framing the dramatic architectural geometry of the Caldera.",
+    "redbeach": "The Red Beach",
+    "redbeach_desc": "A rare geological marvel wrapped in soaring crimson volcanic cliffs and dark volcanic sand.",
+    "vlychada": "Vlychada Beach",
+    "vlychada_desc": "A breathtaking lunar landscape sculpted by centuries of Aegean winds and sea salt.",
+    "selene": "Selene Restaurant",
+    "selene_desc": "A pioneer of the island's fine dining scene, situated inside a historical majestic monastery setting.",
+    "pyrgos": "Pyrgos Medieval Castle",
+    "pyrgos_desc": "The highest village on the island, featuring an intact medieval fortified settlement and panoramic views.",
+    "amoudi": "Amoudi Bay",
+    "amoudi_desc": "A picturesque harbor nestled below Oia, world-renowned for its traditional waterfront fish tavernas.",
+    "perivolos": "Perivolos Black Beach",
+    "perivolos_desc": "An endless cosmopolitan stretch of fine black volcanic sand and crystal-clear deep waters.",
+    "visit_website": "Visit Website",
+    "map_key": "MAP KEY",
+    "key_heritage": "Culture & Heritage (Archaeology)",
+    "key_dining": "Gastronomy & Fine Dining",
+    "key_beach": "Beaches & Nature"
+  },
+  "Social": {
+    "chat_concierge": "Chat with Concierge",
+    "share_page": "Share this page",
+    "whatsapp_preset": "Hello! I would like to inquire about suite availability and experiences at the resort."
   },
   "Footer": {
+    "nav_about": "About",
     "description": "The definition of Cycladic minimalist luxury. A sanctuary of peace in the deep blue of the Aegean.",
     "explore": "Explore",
     "info": "Information",

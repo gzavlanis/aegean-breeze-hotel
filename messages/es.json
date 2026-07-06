@@ -1,5 +1,6 @@
 {
   "Header": {
+    "nav_about": "El Resort",
     "nav_rooms": "Habitaciones",
     "nav_experiences": "Experiencias",
     "nav_gallery": "Galería",
@@ -38,21 +39,29 @@
     "amenity_parking": "Aparcamiento Gratis"
   },
   "Experiences": {
-    "title": "Experiencias del Egeo",
-    "subtitle": "Descubra nuestras exclusivas comodidades, diseñadas para elevar sus sentidos con el azul infinito de fondo.",
+    "title": "Experiencias Exclusivas",
+    "subtitle": "Sumérjase en la belleza salvaje y la cultura refinada de las Cícladas a través de viajes meticulosamente seleccionados.",
     "discover": "Descubrir",
-    "dining": "Alta Gastronomía",
-    "dining_desc": "Pruebe la auténtica cocina del Egeo con ingredientes locales frescos y vistas al atardecer.",
-    "wellness": "Spa y Bienestar",
-    "wellness_desc": "Relájese con la terapia de piedras geométricas y tratamientos holísticos para el rejuvenecimiento.",
-    "yachting": "Yates Privados",
-    "yachting_desc": "Descubra calas escondidas y playas vírgenes con nuestra flota privada.",
+    "dining": "Alta Cocina",
+    "dining_desc": "Una exploración vanguardista del legado del Egeo con ingredientes cosechados diariamente en nuestra finca privada.",
+    "wellness": "Bienestar & Alquimia",
+    "wellness_desc": "Restauración física integral alineada con los elementos naturales dentro de espectaculares cámaras volcánicas.",
+    "yachting": "Yachting Privado",
+    "yachting_desc": "Zarpe a bordo de nuestra flota de catamaranes personalizados para presenciar el legendario atardecer de Santorini en absoluta privacidad.",
     "wine": "Cata de Vinos",
-    "wine_desc": "Visite viñedos históricos y deguste variedades raras con nuestros sumilleres."
+    "wine_desc": "Decodifique la intensa mineralidad y el terroir volcánico de los viñedos de raíces propias más antiguos de Europa.",
+    "spec_hours": "Horario",
+    "spec_location": "Ubicación",
+    "spec_exclusivity": "Exclusividad",
+    "spec_title": "Especificaciones del Viaje",
+    "visual_chronicles": "Crónicas Visuales",
+    "capturing_moment": "Capturando el Momento",
+    "inquire": "Solicitar Reservación"
   },
   "Gallery": {
-    "title": "Visual History",
-    "subtitle": "Momentos de absoluta serenidad. La geometría de la arquitectura se encuentra con la luz de las Cícladas."
+    "title": "Exploración Visual",
+    "subtitle": "Una clase magistral de geometría arquitectónica, texturas puras y luz celestial de las Cícladas.",
+    "view_frame": "Ver Imagen"
   },
   "Testimonials": {
     "title": "Opiniones de los Huéspedes",
@@ -73,9 +82,15 @@
     "subject_other": "Otro",
     "message_label": "Mensaje",
     "message_placeholder": "¿Cómo podemos ayudarle?",
-    "submit_button": "Enviar Mensaje"
+    "submit_button": "Enviar Mensaje",
+    "directory_title": "Directorio Directo",
+    "directory_subtitle": "Comuníquese con nuestros departamentos",
+    "access_title": "Ubicación & Acceso",
+    "access_subtitle": "Llegada al Santuario",
+    "access_desc": "Situado en la cresta más alta de Imerovigli, Aethra domina un aislamiento absoluto mientras permanece accesible sin esfuerzo."
   },
   "Footer": {
+    "nav_about": "El Resort",
     "description": "La definición del lujo minimalista cicládico. Un santuario de paz en el azul profundo del mar Egeo.",
     "explore": "Explorar",
     "info": "Información",

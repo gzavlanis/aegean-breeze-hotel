@@ -26,10 +26,11 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-xs font-bold uppercase tracking-widest text-aegean-sky">{t('explore')}</h4>
                         <nav className="flex flex-col gap-4">
+                            <Link href="/about" className="text-sm font-light text-white/70 hover:text-white transition-colors w-max">{t('nav_about')}</Link>
                             <Link href="/rooms" className="text-sm font-light text-white/70 hover:text-white transition-colors w-max">{t('nav_rooms')}</Link>
                             <Link href="/experiences" className="text-sm font-light text-white/70 hover:text-white transition-colors w-max">{t('nav_experiences')}</Link>
+                            <Link href="/explore" className="text-sm font-light text-white/70 hover:text-white transition-colors w-max">{t('explore')}</Link>
                             <Link href="/gallery" className="text-sm font-light text-white/70 hover:text-white transition-colors w-max">{t('nav_gallery')}</Link>
-                            <Link href="/contact" className="text-sm font-light text-white/70 hover:text-white transition-colors w-max">{t('nav_contact')}</Link>
                         </nav>
                     </div>
 
@@ -39,6 +40,7 @@ export default function Footer() {
                             <Link href="/faq" className="text-sm font-light text-white/70 hover:text-white transition-colors w-max">{t('faq')}</Link>
                             <Link href="/terms" className="text-sm font-light text-white/70 hover:text-white transition-colors w-max">{t('terms')}</Link>
                             <Link href="/privacy" className="text-sm font-light text-white/70 hover:text-white transition-colors w-max">{t('privacy')}</Link>
+                            <Link href="/contact" className="text-sm font-light text-white/70 hover:text-white transition-colors w-max">{t('nav_contact')}</Link>
                         </nav>
                     </div>
 

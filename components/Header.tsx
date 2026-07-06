@@ -86,8 +86,10 @@ export default function Header() {
 
                 {/* Links */}
                 <nav className={cn("hidden md:flex items-center gap-8 transition-colors duration-500", isScrolled ? "text-aegean-deep" : "text-white")}>
+                    <Link href="/about" className="text-xs font-medium uppercase tracking-widest hover:text-aegean-sky transition">{t('nav_about')}</Link>
                     <Link href="/rooms" className="text-xs font-medium uppercase tracking-widest hover:text-aegean-sky transition">{t('nav_rooms')}</Link>
                     <Link href="/experiences" className="text-xs font-medium uppercase tracking-widest hover:text-aegean-sky transition">{t('nav_experiences')}</Link>
+                    <Link href="/explore" className="text-xs font-medium uppercase tracking-widest hover:text-aegean-sky transition">{t('nav_explore')}</Link>
                     <Link href="/gallery" className="text-xs font-medium uppercase tracking-widest hover:text-aegean-sky transition">{t('nav_gallery')}</Link>
                     <Link href="/contact" className="text-xs font-medium uppercase tracking-widest hover:text-aegean-sky transition">{t('nav_contact')}</Link>
                 </nav>

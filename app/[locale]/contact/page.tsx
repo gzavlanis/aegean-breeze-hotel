@@ -65,10 +65,10 @@ export default async function ContactPage({ params }: ContactPageProps) {
             <section className="py-24 px-6 max-w-7xl mx-auto">
                 <div className="text-center md:text-left mb-16">
           <span className="text-[10px] font-bold uppercase tracking-widest text-aegean-sky mb-2 block">
-            DIRECT DIRECTORY
+            {t("directory_title")}
           </span>
                     <h2 className="text-2xl font-light text-aegean-deep uppercase tracking-tight">
-                        COMMUNICATE WITH OUR DEPARTMENTS
+                        {t("directory_subtitle")}
                     </h2>
                 </div>
 
@@ -101,13 +101,13 @@ export default async function ContactPage({ params }: ContactPageProps) {
 
                     <div className="lg:col-span-1 space-y-4">
             <span className="text-[10px] font-bold uppercase tracking-widest text-aegean-sky block">
-              LOCATION & ACCESS
+              {t("access_title")}
             </span>
                         <h2 className="text-2xl font-light text-aegean-deep uppercase tracking-tight leading-tight">
-                            ARRIVING AT THE SANCTUARY
+                            {t("access_subtitle")}
                         </h2>
                         <p className="text-aegean-deep/70 font-light text-xs md:text-sm leading-relaxed">
-                            Situated on the highest crest of Imerovigli, Aethra commands absolute isolation while remaining effortlessly accessible.
+                            {t("access_desc")}
                         </p>
 
                         {/* Quick Contact Specs */}

@@ -1,5 +1,6 @@
 {
   "Header": {
+    "nav_about": "Il Resort",
     "nav_rooms": "Camere",
     "nav_experiences": "Esperienze",
     "nav_gallery": "Galleria",
@@ -38,21 +39,29 @@
     "amenity_parking": "Parcheggio Gratuito"
   },
   "Experiences": {
-    "title": "Esperienze Egee",
-    "subtitle": "Scopri i nostri servizi unici, progettati per elevare i tuoi sensi sullo sfondo del blu infinito.",
+    "title": "Esperienze Esclusive",
+    "subtitle": "Immergetevi nella bellezza selvaggia e nella cultura raffinata delle Cicladi attraverso viaggi meticolosamente curati.",
     "discover": "Scopri",
     "dining": "Alta Cucina",
-    "dining_desc": "Assapora l'autentica cucina dell'Egeo con ingredienti locali freschi e vista sul tramonto.",
-    "wellness": "Spa & Benessere",
-    "wellness_desc": "Rilassati con la cristalloterapia geometrica e trattamenti olistici per il ringiovanimento.",
-    "yachting": "Yacht Privati",
-    "yachting_desc": "Scopri insenature nascoste e spiagge incontaminate con la nostra flotta privata.",
-    "wine": "Degustazione di Vini",
-    "wine_desc": "Visita i vigneti storici dell'isola e degusta varietà rare con i nostri sommelier."
+    "dining_desc": "Un'esplorazione d'avanguardia dell'eredità dell'Egeo con ingredienti raccolti ogni giorno nella nostra tenuta privata.",
+    "wellness": "Benessere & Alchimia",
+    "wellness_desc": "Rigenerazione fisica olistica allineata agli elementi naturali all'interno di spettacolari camere vulcaniche.",
+    "yachting": "Yachting Privato",
+    "yachting_desc": "Salpate a bordo della nostra flotta di catamarani personalizzati per assistere al leggendario tramonto di Santorini in assoluta privacy.",
+    "wine": "Degustazione Vini",
+    "wine_desc": "Decodificate l'intensa mineralità e il terroir vulcanico dei vigneti a piede franco più antichi d'Europa.",
+    "spec_hours": "Orari",
+    "spec_location": "Luogo",
+    "spec_exclusivity": "Esclusività",
+    "spec_title": "Specifiche del Viaggio",
+    "visual_chronicles": "Cronache Visuali",
+    "capturing_moment": "Catturare l'Attimo",
+    "inquire": "Invia Richiesta di Prenotazione"
   },
   "Gallery": {
-    "title": "Visual History",
-    "subtitle": "Momenti di assoluta serenità. La geometria dell'architettura incontra la luce delle Cicladi."
+    "title": "Esplorazione Visiva",
+    "subtitle": "Una masterclass di geometria architettonica, texture grezze e pura luce cicladica.",
+    "view_frame": "Visualizza Foto"
   },
   "Testimonials": {
     "title": "Recensioni degli Ospiti",
@@ -73,9 +82,27 @@
     "subject_other": "Altro",
     "message_label": "Messaggio",
     "message_placeholder": "Come possiamo aiutarti?",
-    "submit_button": "Invia Messaggio"
+    "submit_button": "Invia Messaggio",
+    "directory_title": "Linee Dirette",
+    "directory_subtitle": "Comunicate con i nostri reparti",
+    "access_title": "Posizione & Accesso",
+    "access_subtitle": "Arrivo al Santuario",
+    "access_desc": "Situato sulla cresta più alta di Imerovigli, l'Aethra domina un isolamento assoluto pur rimanendo facilmente accessibile."
+  },
+  "About": {
+    "title": "La Nostra Storia",
+    "subtitle": "Simmetria architettonica, autentica eredità cicladica e l'arte della totale quiete.",
+    "pillar_villas": "Ville & Suite Private",
+    "pillar_estate": "Ettari di Tenuta Privata",
+    "pillar_chefs": "Chef Stellati Michelin",
+    "story_title": "La Nostra Filosofia",
+    "arch_title": "Geometria Architettonica",
+    "arch_desc": "Aethra è stato concepito come un'estensione fisica della scogliera vulcanica. Incarnando geometrie minimaliste pulite e tradizionali forme sotterranee, l'architettura incornicia un dialogo continuo tra luce e ombra, pietra grezza e l'azzurro infinito dell'Egeo.",
+    "service_title": "Ospitalità Su Misura",
+    "service_desc": "Crediamo che il vero lusso risieda nell'assoluta personalizzazione. Il nostro team d'élite è permanentemente a disposizione per anticipare ogni vostra micro-esigenza, ridefinendo i concetti di privacy e libertà."
   },
   "Footer": {
+    "nav_about": "Il Resort",
     "description": "La definizione del lusso minimalista cicladico. Un santuario di pace nel profondo blu dell'Egeo.",
     "explore": "Esplora",
     "info": "Informazioni",
