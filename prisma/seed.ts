@@ -1,221 +1,70 @@
-import { PrismaClient } from "./generated/client";
-
-const prisma = new PrismaClient();
+import mysql from "mysql2/promise";
 
 async function main() {
-    console.log("⏳ Clear old data...");
-    await prisma.booking.deleteMany({});
-    await prisma.room.deleteMany({});
-    await prisma.landmark.deleteMany({});
-    await prisma.experience.deleteMany({});
+    const connectionString = process.env.DATABASE_URL;
+    if (!connectionString) {
+        throw new Error("DATABASE_URL is missing from environment variables.");
+    }
 
-    console.log("🌱 Φύτευση και των 8 Curated Landmarks (Map Pins)...");
-    await prisma.landmark.createMany({
-        data: [
-            {
-                slug: "pin-oia",
-                nameKey: "oia",
-                descKey: "oia_desc",
-                distance: "10 km",
-                image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=600",
-                websiteUrl: "https://www.visitgreece.gr",
-                lat: 36.4618,
-                lng: 25.3753,
-                category: "heritage"
-            },
-            {
-                slug: "pin-akrotiri",
-                nameKey: "akrotiri",
-                descKey: "akrotiri_desc",
-                distance: "22 km",
-                image: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?q=80&w=600",
-                websiteUrl: "https://www.odysseus.culture.gr",
-                lat: 36.3514,
-                lng: 25.4029,
-                category: "heritage"
-            },
-            {
-                slug: "pin-pyrgos",
-                nameKey: "pyrgos",
-                descKey: "pyrgos_desc",
-                distance: "7.5 km",
-                image: "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=600",
-                websiteUrl: "https://www.visitgreece.gr",
-                lat: 36.3835,
-                lng: 25.4482,
-                category: "heritage"
-            },
-            {
-                slug: "pin-selene",
-                nameKey: "selene",
-                descKey: "selene_desc",
-                distance: "8 km",
-                image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600",
-                websiteUrl: "https://selene.gr",
-                lat: 36.3862,
-                lng: 25.4485,
-                category: "dining"
-            },
-            {
-                slug: "pin-amoudi",
-                nameKey: "amoudi",
-                descKey: "amoudi_desc",
-                distance: "11 km",
-                image: "https://images.unsplash.com/photo-1516690561799-46d8f74f90f6?q=80&w=600",
-                websiteUrl: "https://www.visitgreece.gr",
-                lat: 36.4594,
-                lng: 25.3692,
-                category: "dining"
-            },
-            {
-                slug: "pin-vlychada",
-                nameKey: "vlychada",
-                descKey: "vlychada_desc",
-                distance: "19 km",
-                image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600",
-                websiteUrl: "https://www.visitgreece.gr",
-                lat: 36.3394,
-                lng: 25.4322,
-                category: "beach"
-            },
-            {
-                slug: "pin-redbeach",
-                nameKey: "redbeach",
-                descKey: "redbeach_desc",
-                distance: "23 km",
-                image: "https://images.unsplash.com/photo-1560242375-73130d210515?q=80&w=600",
-                websiteUrl: "https://www.visitgreece.gr",
-                lat: 36.3481,
-                lng: 25.3948,
-                category: "beach"
-            },
-            {
-                slug: "pin-perivolos",
-                nameKey: "perivolos",
-                descKey: "perivolos_desc",
-                distance: "17 km",
-                image: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?q=80&w=600",
-                websiteUrl: "https://www.visitgreece.gr",
-                lat: 36.3458,
-                lng: 25.4655,
-                category: "beach"
-            }
-        ]
-    });
+    console.log("🔌 Connecting directly to MySQL via native driver...");
+    const connection = await mysql.createConnection(connectionString);
 
-    console.log("🌱 Φύτευση Ολόκληρης της Συλλογής Luxury Suites με Φωτογραφικό Υλικό (Gallery)...");
+    try {
+        console.log("⏳ Clearing old data...");
+        await connection.query("SET FOREIGN_KEY_CHECKS = 0;");
+        await connection.query("TRUNCATE TABLE bookings;");
+        await connection.query("TRUNCATE TABLE rooms;");
+        await connection.query("TRUNCATE TABLE landmarks;");
+        await connection.query("TRUNCATE TABLE experiences;");
+        await connection.query("SET FOREIGN_KEY_CHECKS = 1;");
 
-    // 1. Suite: Caldera Grand View Suite
-    await prisma.room.create({
-        data: {
-            slug: "caldera-grand-suite",
-            nameKey: "suite_caldera_title",
-            descKey: "suite_caldera_desc",
-            basePrice: 450.00,
-            maxGuests: 2,
-            sqMeters: 55,
-            amenities: JSON.stringify(["private_pool", "wifi", "king_bed", "sea_view", "mini_bar"]),
-            mainImage: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=800",
-            images: JSON.stringify([
-                "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=800",
-                "https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?q=80&w=800",
-                "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800"
-            ])
-        }
-    });
+        const now = new Date();
 
-    // 2. Suite: Aegean Infinity Private Pool Suite
-    await prisma.room.create({
-        data: {
-            slug: "aegean-infinity-suite",
-            nameKey: "suite_infinity_title",
-            descKey: "suite_infinity_desc",
-            basePrice: 650.00,
-            maxGuests: 2,
-            sqMeters: 70,
-            amenities: JSON.stringify(["infinity_pool", "wifi", "king_bed", "caldera_view", "concierge_24h"]),
-            mainImage: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=800",
-            images: JSON.stringify([
-                "https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=800",
-                "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800"
-            ])
-        }
-    });
+        console.log("🌱 Inserting 8 Curated Landmarks...");
+        const landmarks = [
+            ["pin-oia", "oia", "oia_desc", "10 km", "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=600", "https://www.visitgreece.gr", 36.4618, 25.3753, "heritage", now],
+            ["pin-akrotiri", "akrotiri", "akrotiri_desc", "22 km", "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?q=80&w=600", "https://www.odysseus.culture.gr", 36.3514, 25.4029, "heritage", now],
+            ["pin-pyrgos", "pyrgos", "pyrgos_desc", "7.5 km", "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?q=80&w=600", "https://www.visitgreece.gr", 36.3835, 25.4482, "heritage", now],
+            ["pin-selene", "selene", "selene_desc", "8 km", "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600", "https://selene.gr", 36.3862, 25.4485, "dining", now],
+            ["pin-amoudi", "amoudi", "amoudi_desc", "11 km", "https://images.unsplash.com/photo-1516690561799-46d8f74f90f6?q=80&w=600", "https://www.visitgreece.gr", 36.4594, 25.3692, "dining", now],
+            ["pin-vlychada", "vlychada", "vlychada_desc", "19 km", "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600", "https://www.visitgreece.gr", 36.3394, 25.4322, "beach", now],
+            ["pin-redbeach", "redbeach", "redbeach_desc", "23 km", "https://images.unsplash.com/photo-1560242375-73130d210515?q=80&w=600", "https://www.visitgreece.gr", 36.3481, 25.3948, "beach", now],
+            ["pin-perivolos", "perivolos", "perivolos_desc", "17 km", "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?q=80&w=600", "https://www.visitgreece.gr", 36.3458, 25.4655, "beach", now]
+        ];
+        await connection.query(
+            "INSERT INTO landmarks (slug, nameKey, descKey, distance, image, websiteUrl, lat, lng, category, updatedAt) VALUES ?",
+            [landmarks]
+        );
 
-    // 3. Suite: Honeymoon Cliffside Sanctuary
-    await prisma.room.create({
-        data: {
-            slug: "honeymoon-sanctuary-suite",
-            nameKey: "suite_honeymoon_title",
-            descKey: "suite_honeymoon_desc",
-            basePrice: 850.00,
-            maxGuests: 2,
-            sqMeters: 85,
-            amenities: JSON.stringify(["outdoor_jacuzzi", "wifi", "champagne_welcome", "panoramic_sunset"]),
-            mainImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800",
-            images: JSON.stringify([
-                "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800",
-                "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=800"
-            ])
-        }
-    });
+        console.log("🌱 Inserting Luxury Suites...");
+        const rooms = [
+            ["caldera-grand-suite", "suite_caldera_title", "suite_caldera_desc", 450.00, 2, 55, JSON.stringify(["private_pool", "wifi", "king_bed", "sea_view", "mini_bar"]), "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=800", JSON.stringify(["https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=800", "https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?q=80&w=800", "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800"]), "1", now],
+            ["aegean-infinity-suite", "suite_infinity_title", "suite_infinity_desc", 650.00, 2, 70, JSON.stringify(["infinity_pool", "wifi", "king_bed", "caldera_view", "concierge_24h"]), "https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=800", JSON.stringify(["https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=800", "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800"]), "2", now],
+            ["honeymoon-sanctuary-suite", "suite_honeymoon_title", "suite_honeymoon_desc", 850.00, 2, 85, JSON.stringify(["outdoor_jacuzzi", "wifi", "champagne_welcome", "panoramic_sunset"]), "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800", JSON.stringify(["https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800", "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=800"]), "3", now],
+            ["royal-aegean-villa", "suite_royal_title", "suite_royal_desc", 1400.00, 4, 140, JSON.stringify(["private_infinity_pool", "wifi", "two_bedrooms", "private_chef_available", "sunset_terrace"]), "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800", JSON.stringify(["https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800", "https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=800"]), "4", now]
+        ];
+        await connection.query(
+            "INSERT INTO rooms (slug, nameKey, descKey, basePrice, maxGuests, sqMeters, amenities, mainImage, images, syncToken, updatedAt) VALUES ?",
+            [rooms]
+        );
 
-    // 4. Suite: Oia Royal Aegean Villa (Top Tier)
-    await prisma.room.create({
-        data: {
-            slug: "royal-aegean-villa",
-            nameKey: "suite_royal_title",
-            descKey: "suite_royal_desc",
-            basePrice: 1400.00,
-            maxGuests: 4,
-            sqMeters: 140,
-            amenities: JSON.stringify(["private_infinity_pool", "wifi", "two_bedrooms", "private_chef_available", "sunset_terrace"]),
-            mainImage: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800",
-            images: JSON.stringify([
-                "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800",
-                "https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=800"
-            ])
-        }
-    });
+        console.log("🌱 Inserting Premium Experiences...");
+        const experiences = [
+            ["private-catamaran-sunset", "exp_catamaran_title", "exp_catamaran_desc", 250.00, "5 Hours", "https://images.unsplash.com/photo-1505080856163-267d49b30626?q=80&w=800", now],
+            ["volcanic-wine-tasting", "exp_wine_title", "exp_wine_desc", 120.00, "3 Hours", "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800", now],
+            ["helicopter-caldera-tour", "exp_helicopter_title", "exp_helicopter_desc", 600.00, "30 Mins", "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800", now]
+        ];
+        await connection.query(
+            "INSERT INTO experiences (slug, nameKey, descKey, price, duration, mainImage, updatedAt) VALUES ?",
+            [experiences]
+        );
 
-    console.log("🌱 Φύτευση Premium Resort Experiences...");
-    await prisma.experience.createMany({
-        data: [
-            {
-                slug: "private-catamaran-sunset",
-                nameKey: "exp_catamaran_title",
-                descKey: "exp_catamaran_desc",
-                price: 250.00,
-                duration: "5 Hours",
-                mainImage: "https://images.unsplash.com/photo-1505080856163-267d49b30626?q=80&w=800"
-            },
-            {
-                slug: "volcanic-wine-tasting",
-                nameKey: "exp_wine_title",
-                descKey: "exp_wine_desc",
-                price: 120.00,
-                duration: "3 Hours",
-                mainImage: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=800"
-            },
-            {
-                slug: "helicopter-caldera-tour",
-                nameKey: "exp_helicopter_title",
-                descKey: "exp_helicopter_desc",
-                price: 600.00,
-                duration: "30 Mins",
-                mainImage: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800"
-            }
-        ]
-    });
-
-    console.log("✅ Όλα τα δεδομένα, οι φωτογραφίες και οι εμπειρίες συγχρονίστηκαν επιτυχώς στη MySQL!");
+        console.log("✅ Native SQL Seeding Completed Successfully!");
+    } catch (error) {
+        console.error("❌ SQL Error during seeding:", error);
+    } finally {
+        await connection.end();
+    }
 }
 
-main()
-    .catch((e) => {
-        console.error("❌ Σφάλμα κατά το database seeding:", e);
-        process.exit(1);
-    })
-    .finally(async () => {
-        await prisma.$disconnect();
-    });
+main();
