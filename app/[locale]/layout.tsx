@@ -1,12 +1,12 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import SocialConcierge from '@/components/SocialConcierge';
 import "../globals.css";
 import React from "react";
 
-export default async function LocaleLayout({ children, params }: {
+export default async function RootLayout({
+                                             children,
+                                             params
+                                         }: {
     children: React.ReactNode;
     params: Promise<{ locale: string }>;
 }) {
@@ -15,14 +15,9 @@ export default async function LocaleLayout({ children, params }: {
 
     return (
         <html lang={locale}>
-        <body className="flex flex-col min-h-screen">
+        <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
-            <Header />
-            <main className="flex-grow">
-                {children}
-            </main>
-            <Footer />
-            <SocialConcierge />
+            {children}
         </NextIntlClientProvider>
         </body>
         </html>

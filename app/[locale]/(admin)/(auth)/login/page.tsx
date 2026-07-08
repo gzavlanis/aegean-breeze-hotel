@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function AdminLogin() {
     const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ export default function AdminLogin() {
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const router = useRouter();
+    const locale = useLocale();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -23,10 +25,10 @@ export default function AdminLogin() {
         });
 
         if (result?.error) {
-            setError("Μη έγκυρα στοιχεία πρόσβασης.");
+            setError("Invalid credentials.");
             setLoading(false);
         } else {
-            router.push("/admin/dashboard");
+            router.push("/admin");
         }
     };
 

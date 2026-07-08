@@ -1,17 +1,25 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-export async function GET(
-    request: Request,
-    { params }: { params: { id: string } }
-) {
+interface RouteParams {
+    params: Promise<{ id: string }>;
+}
+
+export async function GET(request: NextRequest, { params }: RouteParams) {
     try {
-        const roomId = Number(params.id);
+        const { id } = await params;
+        const roomId = Number(id);
+
+        if (isNaN(roomId)) {
+            return NextResponse.json({ error: "Invalid Room ID" }, { status: 400 });
+        }
 
         const bookings = await prisma.booking.findMany({
             where: {
                 roomId: roomId,
-                status: { not: "CANCELLED" },
+                status: {
+                    not: "CANCELLED",
+                },
             },
             select: {
                 checkIn: true,
@@ -19,20 +27,7 @@ export async function GET(
             },
         });
 
-        const bookedDates: string[] = [];
-        bookings.forEach((booking) => {
-            const current = new Date(booking.checkIn);
-            const end = new Date(booking.checkOut);
-
-            while (current <= end) {
-                bookedDates.push(current.toISOString().split("T")[0]);
-                current.setDate(current.getDate() + 1);
-            }
-        });
-
-        const uniqueBookedDates = Array.from(new Set(bookedDates));
-
-        return NextResponse.json(uniqueBookedDates, { status: 200 });
+        return NextResponse.json(bookings);
     } catch (error) {
         console.error("Error fetching booked dates:", error);
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });

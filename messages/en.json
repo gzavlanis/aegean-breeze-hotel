@@ -32,12 +32,28 @@
     "guests_label": "Guests",
     "per_night": "per night",
     "from": "FROM",
+
     "amenity_wifi": "Free WiFi",
     "amenity_ac": "Air Conditioning",
     "amenity_pool": "Private Pool",
     "amenity_coffee": "Espresso Machine",
     "amenity_tv": "Smart TV",
-    "amenity_parking": "Free Parking"
+    "amenity_parking": "Free Parking",
+
+    "suite_caldera_title": "Caldera Grand Suite",
+    "suite_caldera_desc": "Experience ultimate luxury with breathtaking views of the Santorini Caldera, featuring a private pool and high-end amenities.",
+
+    "suite_infinity_title": "Aegean Infinity Suite",
+    "suite_infinity_desc": "A masterfully designed suite featuring an endless infinity pool that blends seamlessly into the deep blue of the Aegean sea.",
+
+    "suite_honeymoon_title": "Honeymoon Sanctuary Suite",
+    "suite_honeymoon_desc": "The perfect romantic escape built directly into the volcanic cliffside, offering absolute privacy and a private outdoor jacuzzi.",
+
+    "suite_royal_title": "Royal Aegean Villa",
+    "suite_royal_desc": "Our crown jewel. Absolute privacy, unmatched space, two luxury bedrooms, and a sunset terrace with a private chef available.",
+
+    "reserve_title": "Reserve Your Stay",
+    "book_now_btn": "Book Sanctuary Now"
   },
   "Experiences": {
     "title": "Bespoke Experiences",

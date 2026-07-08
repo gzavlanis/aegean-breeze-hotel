@@ -2,14 +2,24 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import ical from "ical-generator";
 
+interface RouteParams {
+    params: Promise<{ id: string }>;
+}
+
 export async function GET(
     request: Request,
-    { params }: { params: { id: string } }
+    { params }: RouteParams
 ) {
     try {
+        const { id } = await params;
+        const roomId = Number(id);
+
+        if (isNaN(roomId)) {
+            return NextResponse.json({ error: "Invalid Room ID" }, { status: 400 });
+        }
+
         const { searchParams } = new URL(request.url);
         const token = searchParams.get("token");
-        const roomId = Number(params.id);
         const room = await prisma.room.findUnique({ where: { id: roomId } });
 
         if (!room || room.syncToken !== token) {
@@ -38,6 +48,7 @@ export async function GET(
             },
         });
     } catch (error) {
+        console.error("iCal Export Error:", error);
         return NextResponse.json({ error: "Internal Server error" }, { status: 500 });
     }
 }
