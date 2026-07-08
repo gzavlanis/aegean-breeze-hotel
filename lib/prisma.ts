@@ -5,12 +5,13 @@ const globalForPrisma = global as unknown as { prisma: PrismaClient };
 
 const createPrismaClient = () => {
     const adapter = new PrismaMariaDb({
-        host: process.env.DATABASE_HOST || "localhost",
-        port: Number(process.env.DATABASE_PORT) || 3306,
-        user: process.env.DATABASE_USER || "root",
-        password: process.env.DATABASE_PASSWORD || "your_password",
-        database: process.env.DATABASE_NAME || "aegean_resort_db",
+        host: process.env.DATABASE_HOST,
+        port: Number(process.env.DATABASE_PORT),
+        user: process.env.DATABASE_USER,
+        password: process.env.DATABASE_PASSWORD,
+        database: process.env.DATABASE_NAME,
         connectionLimit: 5,
+        allowPublicKeyRetrieval: true,
     });
 
     return new PrismaClient({

@@ -14,7 +14,7 @@ interface RoomItem {
     basePrice: number | string;
     maxGuests: number;
     sqMeters: number;
-    amenities: string[];
+    amenities: string[] | string;
     mainImage: string;
 }
 
@@ -32,19 +32,25 @@ export default function RoomsGrid({ teaser = false }: RoomsGridProps) {
         fetch("/api/rooms")
             .then((res) => res.json())
             .then((data) => {
-                setRooms(data);
+                if (Array.isArray(data)) {
+                    setRooms(data);
+                } else {
+                    console.error("API didn't return an array:", data);
+                    setRooms([]);
+                }
                 setLoading(false);
             })
             .catch((err) => {
                 console.error("Error loading live suites:", err);
+                setRooms([]);
                 setLoading(false);
             });
     }, []);
 
-    const filteredRooms = rooms.filter((room) => {
-        if (teaser) return true; // Θα πάρουμε τα 3 πρώτα με .slice() παρακάτω
+    const filteredRooms = (Array.isArray(rooms) ? rooms : []).filter((room) => {
+        if (teaser) return true;
         if (activeFilter === "all") return true;
-        return room.slug.includes(activeFilter);
+        return room.slug?.includes(activeFilter);
     });
 
     const displayedRooms = teaser ? filteredRooms.slice(0, 3) : filteredRooms;
@@ -108,6 +114,9 @@ export default function RoomsGrid({ teaser = false }: RoomsGridProps) {
                 <AnimatePresence mode="popLayout">
                     {displayedRooms.map((room, index) => {
                         const isEven = index % 2 !== 0;
+                        const cleanAmenities: string[] = typeof room.amenities === "string"
+                            ? JSON.parse(room.amenities)
+                            : Array.isArray(room.amenities) ? room.amenities : [];
 
                         return (
                             <motion.div
@@ -145,9 +154,8 @@ export default function RoomsGrid({ teaser = false }: RoomsGridProps) {
                                         {t(room.nameKey)}
                                     </h3>
 
-                                    {/* Grid of Clean Amenities */}
                                     <div className="grid grid-cols-2 gap-y-3 gap-x-4 border-t border-b border-aegean-mist/60 py-6 mb-8">
-                                        {room.amenities.map((amenity) => (
+                                        {cleanAmenities.map((amenity) => (
                                             <span key={amenity} className="text-xs text-aegean-deep/70 font-light flex items-center gap-2">
                                                 <span className="w-1 h-1 bg-aegean-sky rounded-full" />
                                                 {t(amenity)}
