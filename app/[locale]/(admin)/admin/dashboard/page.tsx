@@ -3,6 +3,7 @@ import AdminBookingsTable from "@/components/admin/AdminBookingsTable";
 import AdminStatsCard from "@/components/admin/AdminStatsCard";
 import AdminPerformanceChart from "@/components/admin/AdminPerformanceChart";
 import React from "react";
+import QuickBlockForm from "@/components/admin/QuickBlockForm";
 
 export default async function AdminDashboardPage() {
     const totalBookingsCount = await prisma.booking.count({
@@ -12,6 +13,10 @@ export default async function AdminDashboardPage() {
     const activeBookings = await prisma.booking.findMany({
         where: { status: { not: "CANCELLED" } },
         include: { room: true }
+    });
+
+    const roomsList = await prisma.room.findMany({
+        select: { id: true, slug: true }
     });
 
     const totalRevenue = activeBookings.reduce((sum, b) => sum + Number(b.totalPrice || 0), 0);
@@ -32,7 +37,7 @@ export default async function AdminDashboardPage() {
     const chartData = Object.values(roomStats);
 
     return (
-        <main className="min-h-screen bg-slate-50/50 py-12 px-6 md:px-12 mt-16 text-aegean-deep">
+        <main className="min-h-screen bg-slate-50/50 py-12 px-6 md:px-12 text-aegean-deep">
             <div className="max-w-7xl mx-auto space-y-12">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-aegean-mist pb-6">
                     <div>
@@ -53,11 +58,18 @@ export default async function AdminDashboardPage() {
                     totalBookingsCount={totalBookingsCount}
                 />
 
-                <AdminPerformanceChart
-                    chartData={chartData}
-                    totalRevenue={totalRevenue}
-                    totalBookingsCount={totalBookingsCount}
-                />
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div className="lg:col-span-2">
+                        <AdminPerformanceChart
+                            chartData={chartData}
+                            totalRevenue={totalRevenue}
+                            totalBookingsCount={totalBookingsCount}
+                        />
+                    </div>
+                    <div>
+                        <QuickBlockForm rooms={roomsList} />
+                    </div>
+                </div>
 
                 <div className="space-y-4">
                     <h2 className="text-sm font-bold uppercase tracking-widest text-aegean-deep">
@@ -65,7 +77,6 @@ export default async function AdminDashboardPage() {
                     </h2>
                     <AdminBookingsTable />
                 </div>
-
             </div>
         </main>
     );
