@@ -1,5 +1,4 @@
 import { prisma } from "@/lib/prisma";
-import AdminBookingsTable from "@/components/admin/AdminBookingsTable";
 import AdminStatsCard from "@/components/admin/AdminStatsCard";
 import AdminPerformanceChart from "@/components/admin/AdminPerformanceChart";
 import React from "react";
@@ -69,13 +68,6 @@ export default async function AdminDashboardPage() {
                     <div>
                         <QuickBlockForm rooms={roomsList} />
                     </div>
-                </div>
-
-                <div className="space-y-4">
-                    <h2 className="text-sm font-bold uppercase tracking-widest text-aegean-deep">
-                        Recent Reservation Ledger
-                    </h2>
-                    <AdminBookingsTable />
                 </div>
             </div>
         </main>

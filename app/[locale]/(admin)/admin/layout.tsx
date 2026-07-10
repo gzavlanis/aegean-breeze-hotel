@@ -37,6 +37,11 @@ export default function AdminZoneLayout({ children }: AdminLayoutProps) {
             href: "/admin/expenses",
             icon: IconGlobe,
         },
+        {
+            name: "Web Traffic",
+            href: "/admin/traffic",
+            icon: IconGlobe
+        },
     ];
 
     return (

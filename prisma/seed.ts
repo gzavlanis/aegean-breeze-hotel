@@ -111,6 +111,86 @@ async function main() {
             [experiences]
         );
 
+        const [insertedRooms]: any = await connection.query("SELECT id, slug, basePrice FROM rooms");
+
+        console.log("🎲 Generating 50 Balanced & Non-Overlapping Bookings across 2026...");
+        const firstNames = ["John", "Emma", "Michael", "Sophia", "William", "Olivia", "James", "Ava", "David", "Isabella", "Pierre", "Yuki", "Hans", "Elena", "Charlotte"];
+        const lastNames = ["Smith", "Watson", "Johnson", "Brown", "Jones", "Miller", "Davis", "Garcia", "Rodriguez", "Müller", "Dubois", "Tanaka", "Rostova", "Beckham"];
+        const statuses = ["CONFIRMED", "CONFIRMED", "CONFIRMED", "PENDING", "CANCELLED"]; // 60% confirmed, 20% pending, 20% cancelled
+
+        const bookings: any[] = [];
+
+        for (const room of insertedRooms) {
+            const basePrice = Number(room.basePrice);
+            let currentCheckIn = new Date(2026, 4, 1);
+
+            for (let i = 0; i < 13; i++) {
+                const duration = Math.floor(Math.random() * 4) + 3;
+                const checkInDate = new Date(currentCheckIn);
+                const checkOutDate = new Date(currentCheckIn);
+                checkOutDate.setDate(checkOutDate.getDate() + duration);
+
+                const fName = firstNames[Math.floor(Math.random() * firstNames.length)];
+                const lName = lastNames[Math.floor(Math.random() * lastNames.length)];
+
+                let customerName = `${fName} ${lName}`;
+                let customerEmail = `${fName.toLowerCase()}.${lName.toLowerCase()}@example.com`;
+                let status = statuses[Math.floor(Math.random() * statuses.length)];
+                let totalPrice = basePrice * duration;
+
+                if (i % 4 === 0) {
+                    customerName = `INTERNAL_BLOCK: Scheduled Maintenance #${i}`;
+                    customerEmail = "admin@resort.com";
+                    status = "CONFIRMED";
+                    totalPrice = 0.00;
+                }
+
+                bookings.push([
+                    room.id,
+                    customerName,
+                    customerEmail,
+                    checkInDate.toISOString().split('T')[0],
+                    checkOutDate.toISOString().split('T')[0],
+                    totalPrice,
+                    status,
+                    now
+                ]);
+
+                const gap = Math.floor(Math.random() * 4) + 2;
+                currentCheckIn = new Date(checkOutDate);
+                currentCheckIn.setDate(currentCheckIn.getDate() + gap);
+            }
+        }
+
+        await connection.query(
+            "INSERT INTO bookings (roomId, customerName, customerEmail, checkIn, checkOut, totalPrice, status, updatedAt) VALUES ?",
+            [bookings]
+        );
+
+        console.log("🌱 Generating 200 Live Page Views for Traffic Ledger...");
+        const paths = ["/", "/rooms/caldera-grand-suite", "/rooms/aegean-infinity-suite", "/experiences", "/contact"];
+        const refs = ["Direct", "Google Search (SEO)", "Instagram / Social", "Booking.com Referral"];
+        const devs = ["Mobile", "Mobile", "Desktop", "Tablet"]; // 50% mobile ratio
+
+        const pageViewsData: any[] = [];
+        for (let i = 0; i < 200; i++) {
+            const viewDate = new Date();
+            viewDate.setDate(viewDate.getDate() - Math.floor(Math.random() * 5));
+            pageViewsData.push([
+                `https://resort.com${paths[Math.floor(Math.random() * paths.length)]}`,
+                paths[Math.floor(Math.random() * paths.length)],
+                refs[Math.floor(Math.random() * refs.length)],
+                devs[Math.floor(Math.random() * devs.length)],
+                "GR",
+                viewDate
+            ]);
+        }
+
+        await connection.query(
+            "INSERT INTO page_views (url, pathname, referrer, device, country, createdAt) VALUES ?",
+            [pageViewsData]
+        );
+
         console.log("✅ Native SQL Seeding Completed Successfully with Global Translation Keys!");
     } catch (error) {
         console.error("❌ SQL Error during seeding:", error);

@@ -21,6 +21,15 @@ export default async function AdminReservationsPage() {
         totalPrice: b.totalPrice.toString()
     }));
 
+    const rooms = await prisma.room.findMany({
+        select: { id: true, slug: true, basePrice: true }
+    });
+
+    const serializedRooms = rooms.map(r => ({
+        ...r,
+        basePrice: r.basePrice.toString()
+    }));
+
     return (
         <main className="min-h-screen bg-slate-50/50 py-12 px-6 md:px-12 text-aegean-deep">
             <div className="max-w-7xl mx-auto space-y-12">
@@ -41,7 +50,10 @@ export default async function AdminReservationsPage() {
                 </div>
 
                 {/* The Interactive Ledger Content Component */}
-                <AdminReservationsLedger initialBookings={serializedBookings as any} />
+                <AdminReservationsLedger
+                    initialBookings={serializedBookings}
+                    rooms={serializedRooms}
+                />
             </div>
         </main>
     );

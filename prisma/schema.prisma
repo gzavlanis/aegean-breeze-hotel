@@ -1,6 +1,6 @@
 generator client {
   provider   = "prisma-client-js"
-  // output     = "./generated/client"
+  output     = "./generated/client"
 }
 
 datasource db {
@@ -76,6 +76,18 @@ model Experience {
   updatedAt   DateTime @updatedAt
 
   @@map("experiences")
+}
+
+model PageView {
+  id        Int      @id @default(autoincrement())
+  url       String   // π.χ. "/en/rooms/caldera-grand-suite"
+  pathname  String   // π.χ. "/rooms/caldera-grand-suite"
+  referrer  String   @default("Direct")
+  device    String   // Mobile, Desktop, Tablet
+  country   String   @default("Unknown")
+  createdAt DateTime @default(now())
+
+  @@map("page_views")
 }
 
 enum BookingStatus {

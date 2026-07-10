@@ -154,6 +154,19 @@
     "share_page": "Share this page",
     "whatsapp_preset": "Hello! I would like to inquire about suite availability and experiences at the resort."
   },
+  "SearchPage": {
+    "title": "Available Accommodations",
+    "subTitle": "Live Availability Ledger",
+    "night": "night",
+    "nights": "nights",
+    "guest": "guest",
+    "guests": "guests",
+    "perNight": "per night",
+    "totalStay": "Total Gross Yield",
+    "bookButton": "Configure Reservation",
+    "noResults": "No suites or villas match your selected dates or occupancy limits.",
+    "modifySearch": "Return to Home & Modify Search"
+  },
   "Footer": {
     "nav_about": "About",
     "description": "The definition of Cycladic minimalist luxury. A sanctuary of peace in the deep blue of the Aegean.",

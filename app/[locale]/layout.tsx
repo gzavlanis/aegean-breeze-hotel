@@ -2,11 +2,9 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import "../globals.css";
 import React from "react";
+import TrafficTracker from "@/components/analytics/TrafficTracker";
 
-export default async function RootLayout({
-                                             children,
-                                             params
-                                         }: {
+export default async function RootLayout({ children, params }: {
     children: React.ReactNode;
     params: Promise<{ locale: string }>;
 }) {
@@ -19,6 +17,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
             {children}
         </NextIntlClientProvider>
+        <TrafficTracker/>
         </body>
         </html>
     );
